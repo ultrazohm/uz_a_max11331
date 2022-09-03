@@ -291,13 +291,19 @@ UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=6
+VariationCount=12
 Variation1=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation2=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
 Variation3=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
 Variation4=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\VPIXJELC|Kind=1|AlternatePart= 
 Variation5=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\DPMBDSKF|Kind=1|AlternatePart= 
 Variation6=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\VPIXJELC|Kind=1|AlternatePart= 
+Variation7=Designator=R18A|UniqueId=\XFOIWBPK\BSQHFYOB\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
+Variation8=Designator=R16A|UniqueId=\XFOIWBPK\BSQHFYOB\YJNXHGNO\MJNWLZKH|Kind=1|AlternatePart= 
+Variation9=Designator=R16B|UniqueId=\XFOIWBPK\XGTLZUWU\YJNXHGNO\MJNWLZKH|Kind=1|AlternatePart= 
+Variation10=Designator=R16C|UniqueId=\XFOIWBPK\DQKASHWX\YJNXHGNO\MJNWLZKH|Kind=1|AlternatePart= 
+Variation11=Designator=R18C|UniqueId=\XFOIWBPK\DQKASHWX\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
+Variation12=Designator=R18B|UniqueId=\XFOIWBPK\XGTLZUWU\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -305,13 +311,16 @@ UniqueID=0A166520-C4FA-4CF0-A1A4-2F24D2B0FEC4
 Description=SingleEnded_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=6
+VariationCount=9
 Variation1=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\VPIXJELC|Kind=1|AlternatePart= 
 Variation2=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\DPMBDSKF|Kind=1|AlternatePart= 
 Variation3=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\VPIXJELC|Kind=1|AlternatePart= 
 Variation4=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
 Variation5=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation6=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
+Variation7=Designator=R18C|UniqueId=\XFOIWBPK\DQKASHWX\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
+Variation8=Designator=R18B|UniqueId=\XFOIWBPK\XGTLZUWU\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
+Variation9=Designator=R18A|UniqueId=\XFOIWBPK\BSQHFYOB\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [Parameter1]
