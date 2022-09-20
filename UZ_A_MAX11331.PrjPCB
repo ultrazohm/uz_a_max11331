@@ -345,24 +345,24 @@ Variation11=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart=
 ParamVariationCount=0
 
 [Parameter1]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev01
 
 [Parameter2]
-Name=AuthorParam
-Value=Andreas Geiger
+Name=ProjectName
+Value=UZ_A_MAX11331
 
 [Parameter3]
 Name=Date
 Value=08/2022
 
 [Parameter4]
-Name=ProjectName
-Value=UZ_A_MAX11331
+Name=AuthorParam
+Value=Andreas Geiger
 
 [Parameter5]
-Name=ProjectRevision
-Value=Rev01
+Name=Author
+Value=Andreas Geiger
 
 [Configuration1]
 Name=Sources
@@ -1143,7 +1143,7 @@ Type6=2
 Type7=0
 Type8=1
 Type9=1
-Type10=1
+Type10=0
 Type11=2
 Type12=0
 Type13=0
