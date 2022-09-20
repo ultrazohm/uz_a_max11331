@@ -202,23 +202,6 @@ GenerateClassCluster=0
 DocumentUniqueId=PGSEWNKG
 
 [Document10]
-DocumentPath=ADC_Reference_Voltage.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=9
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=VYDLAGSG
-
-[Document11]
 DocumentPath=ADC_Signal_Distribution.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -235,7 +218,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JRTDFNJD
 
-[Document12]
+[Document11]
 DocumentPath=ADC_Signal_Distribution.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -252,7 +235,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document13]
+[Document12]
 DocumentPath=CarrierConnector.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -269,7 +252,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document14]
+[Document13]
 DocumentPath=OpAmp.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -286,8 +269,25 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JWPYPLKO
 
-[Document15]
+[Document14]
 DocumentPath=uz_OutputJob.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document15]
+DocumentPath=Power_Supply.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -345,24 +345,24 @@ Variation11=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart=
 ParamVariationCount=0
 
 [Parameter1]
-Name=ProjectRevision
-Value=Rev01
+Name=Author
+Value=Andreas Geiger
 
 [Parameter2]
-Name=ProjectName
-Value=UZ_A_MAX11331
+Name=AuthorParam
+Value=Andreas Geiger
 
 [Parameter3]
 Name=Date
 Value=08/2022
 
 [Parameter4]
-Name=AuthorParam
-Value=Andreas Geiger
+Name=ProjectName
+Value=UZ_A_MAX11331
 
 [Parameter5]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev01
 
 [Configuration1]
 Name=Sources
@@ -1419,17 +1419,11 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=user.DbLib/ADC
-ComponentDesignItemID0=MAX11331ATJ+
-ComponentSymbolReference0=MAX11331
+ComponentLibraryIdentifier0=user.DbLib/Power Supply - Linear
+ComponentDesignItemID0=REF2033AIDDCT
+ComponentSymbolReference0=REF2033
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
-ComponentLibIdentifierKind1=Library Name And Type
-ComponentLibraryIdentifier1=user.DbLib/Resistors - SMD
-ComponentDesignItemID1=0603WAF2002T5E
-ComponentSymbolReference1=Resistor
-ComponentUpdate1=0
-ComponentIsDeviceSheet1=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1443,25 +1437,25 @@ RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
-ParameterName0=Channels
+ParameterName0=Comment
 ParameterUpdate0=1
-ParameterName1=Comment
+ParameterName1=Component Kind
 ParameterUpdate1=1
-ParameterName2=Component Kind
+ParameterName2=Component Type
 ParameterUpdate2=1
-ParameterName3=Component Type
+ParameterName3=ComponentLink1Description
 ParameterUpdate3=1
-ParameterName4=ComponentLink1Description
+ParameterName4=ComponentLink1URL
 ParameterUpdate4=1
-ParameterName5=ComponentLink1URL
+ParameterName5=Created from
 ParameterUpdate5=1
-ParameterName6=Created from
+ParameterName6=Created On
 ParameterUpdate6=1
-ParameterName7=Created On
+ParameterName7=Description
 ParameterUpdate7=1
-ParameterName8=Description
+ParameterName8=Device Package
 ParameterUpdate8=1
-ParameterName9=Device Package
+ParameterName9=Digikey Part-Number
 ParameterUpdate9=1
 ParameterName10=Last Updated
 ParameterUpdate10=1
@@ -1481,7 +1475,7 @@ ParameterName17=Operating Temperature
 ParameterUpdate17=1
 ParameterName18=PartID
 ParameterUpdate18=1
-ParameterName19=Resolution
+ParameterName19=Series
 ParameterUpdate19=1
 ParameterName20=Stock number
 ParameterUpdate20=1
@@ -1489,23 +1483,15 @@ ParameterName21=Supplier 1
 ParameterUpdate21=1
 ParameterName22=Supplier Part Number 1
 ParameterUpdate22=1
-ParameterName23=Tolerance
+ParameterName23=Type
 ParameterUpdate23=1
-ParameterName24=Type
+ParameterName24=Value
 ParameterUpdate24=1
-ParameterName25=Value
-ParameterUpdate25=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=QFN50P500X500X80-33N-310
+ModelName0=SOT23-5_N
 ModelUpdate0=1
-ModelType1=PCBLIB
-ModelName1=RES 0603_1608
-ModelUpdate1=1
-ModelType2=PCBLIB
-ModelName2=RES 0603_1608 NO TO
-ModelUpdate2=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
