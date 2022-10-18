@@ -43,6 +43,7 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
+CurrentVariant=Differential_Input
 
 [Preferences]
 PrefsVaultGUID=
@@ -308,7 +309,7 @@ UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=14
+VariationCount=15
 Variation1=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation2=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
 Variation3=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
@@ -323,6 +324,7 @@ Variation11=Designator=R18C|UniqueId=\XFOIWBPK\DQKASHWX\YJNXHGNO\PWKGDSMF|Kind=1
 Variation12=Designator=R18B|UniqueId=\XFOIWBPK\XGTLZUWU\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
 Variation13=Designator=R?|UniqueId=\LLLSCVGB\EYSQNRRV|Kind=1|AlternatePart= 
 Variation14=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart= 
+Variation15=Designator=R11A|UniqueId=\1YGYMWNIX\FOQSRIME|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
