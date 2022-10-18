@@ -345,24 +345,28 @@ Variation11=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart=
 ParamVariationCount=0
 
 [Parameter1]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectNameCustom
+Value==ProjectName
 
 [Parameter2]
-Name=AuthorParam
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev01
 
 [Parameter3]
-Name=Date
-Value=08/2022
-
-[Parameter4]
 Name=ProjectName
 Value=UZ_A_MAX11331
 
+[Parameter4]
+Name=Date
+Value=08/2022
+
 [Parameter5]
-Name=ProjectRevision
-Value=Rev01
+Name=AuthorParam
+Value=Andreas Geiger
+
+[Parameter6]
+Name=Author
+Value=Andreas Geiger
 
 [Configuration1]
 Name=Sources
@@ -1419,9 +1423,9 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=user.DbLib/Power Supply - Linear
-ComponentDesignItemID0=REF2033AIDDCT
-ComponentSymbolReference0=REF2033
+ComponentLibraryIdentifier0=user.DbLib/Diodes - TVS
+ComponentDesignItemID0=SMC05
+ComponentSymbolReference0=TVS_BI_2_CH
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=1
@@ -1455,29 +1459,29 @@ ParameterName7=Description
 ParameterUpdate7=1
 ParameterName8=Device Package
 ParameterUpdate8=1
-ParameterName9=Digikey Part-Number
+ParameterName9=Last Updated
 ParameterUpdate9=1
-ParameterName10=Last Updated
+ParameterName10=LCSC Part Number
 ParameterUpdate10=1
-ParameterName11=LCSC Part Number
+ParameterName11=Library Reference
 ParameterUpdate11=1
-ParameterName12=Library Reference
+ParameterName12=Live Cycle Status
 ParameterUpdate12=1
-ParameterName13=Live Cycle Status
+ParameterName13=Manufacturer
 ParameterUpdate13=1
-ParameterName14=Manufacturer
+ParameterName14=Manufacturer Part Number
 ParameterUpdate14=1
-ParameterName15=Manufacturer Part Number
+ParameterName15=Mounting Type
 ParameterUpdate15=1
-ParameterName16=Mounting Type
+ParameterName16=Operating Temperature
 ParameterUpdate16=1
-ParameterName17=Operating Temperature
+ParameterName17=PartID
 ParameterUpdate17=1
-ParameterName18=PartID
+ParameterName18=Peak Impuls Current
 ParameterUpdate18=1
-ParameterName19=Series
+ParameterName19=Power Dissipation
 ParameterUpdate19=1
-ParameterName20=Stock number
+ParameterName20=Series
 ParameterUpdate20=1
 ParameterName21=Supplier 1
 ParameterUpdate21=1
@@ -1490,7 +1494,7 @@ ParameterUpdate24=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=SOT23-5_N
+ModelName0=SOT-23-3
 ModelUpdate0=1
 
 [DatabaseUpdateOptions]
