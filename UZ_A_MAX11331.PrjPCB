@@ -309,7 +309,7 @@ UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=15
+VariationCount=17
 Variation1=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation2=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
 Variation3=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
@@ -325,6 +325,8 @@ Variation12=Designator=R18B|UniqueId=\XFOIWBPK\XGTLZUWU\YJNXHGNO\PWKGDSMF|Kind=1
 Variation13=Designator=R?|UniqueId=\LLLSCVGB\EYSQNRRV|Kind=1|AlternatePart= 
 Variation14=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart= 
 Variation15=Designator=R11A|UniqueId=\1YGYMWNIX\FOQSRIME|Kind=1|AlternatePart= 
+Variation16=Designator=R3|UniqueId=\RFVQAODF|Kind=1|AlternatePart= 
+Variation17=Designator=D3|UniqueId=\HJNGDLXZ|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -332,7 +334,7 @@ UniqueID=0A166520-C4FA-4CF0-A1A4-2F24D2B0FEC4
 Description=SingleEnded_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=11
+VariationCount=13
 Variation1=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\VPIXJELC|Kind=1|AlternatePart= 
 Variation2=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\DPMBDSKF|Kind=1|AlternatePart= 
 Variation3=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\VPIXJELC|Kind=1|AlternatePart= 
@@ -344,31 +346,33 @@ Variation8=Designator=R18B|UniqueId=\XFOIWBPK\XGTLZUWU\YJNXHGNO\PWKGDSMF|Kind=1|
 Variation9=Designator=R18A|UniqueId=\XFOIWBPK\BSQHFYOB\YJNXHGNO\PWKGDSMF|Kind=1|AlternatePart= 
 Variation10=Designator=R?|UniqueId=\LLLSCVGB\EYSQNRRV|Kind=1|AlternatePart= 
 Variation11=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart= 
+Variation12=Designator=R3|UniqueId=\RFVQAODF|Kind=1|AlternatePart= 
+Variation13=Designator=D3|UniqueId=\HJNGDLXZ|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [Parameter1]
-Name=ProjectRevision
-Value=Rev01
+Name=Author
+Value=Andreas Geiger
 
 [Parameter2]
-Name=ProjectNameCustom
-Value==ProjectName
-
-[Parameter3]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter4]
-Name=Date
-Value=08/2022
-
-[Parameter5]
 Name=AuthorParam
 Value=Andreas Geiger
 
+[Parameter3]
+Name=Date
+Value=08/2022
+
+[Parameter4]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter5]
+Name=ProjectNameCustom
+Value==ProjectName
+
 [Parameter6]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev01
 
 [Configuration1]
 Name=Sources
@@ -492,7 +496,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Adobe PDF
+TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
