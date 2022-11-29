@@ -309,7 +309,7 @@ UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=17
+VariationCount=18
 Variation1=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation2=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
 Variation3=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
@@ -327,6 +327,7 @@ Variation14=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart=
 Variation15=Designator=R11A|UniqueId=\1YGYMWNIX\FOQSRIME|Kind=1|AlternatePart= 
 Variation16=Designator=R3|UniqueId=\RFVQAODF|Kind=1|AlternatePart= 
 Variation17=Designator=D3|UniqueId=\HJNGDLXZ|Kind=1|AlternatePart= 
+Variation18=Designator=X2|UniqueId=\LLLSCVGB\YRKNKLAE|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -350,29 +351,33 @@ Variation12=Designator=R3|UniqueId=\RFVQAODF|Kind=1|AlternatePart=
 Variation13=Designator=D3|UniqueId=\HJNGDLXZ|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for UZ_A_MAX11331\Rev01\BOM\BOM_UZ_A_MAX11331_Rev01.xlsx
+DItemRevisionGUID=
+
 [Parameter1]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev01
 
 [Parameter2]
-Name=AuthorParam
-Value=Andreas Geiger
-
-[Parameter3]
-Name=Date
-Value=08/2022
-
-[Parameter4]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter5]
 Name=ProjectNameCustom
 Value==ProjectName
 
+[Parameter3]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter4]
+Name=Date
+Value=11/2022
+
+[Parameter5]
+Name=AuthorParam
+Value=Andreas Geiger
+
 [Parameter6]
-Name=ProjectRevision
-Value=Rev01
+Name=Author
+Value=Andreas Geiger
 
 [Configuration1]
 Name=Sources
