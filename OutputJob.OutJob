@@ -17,8 +17,8 @@ RevisionNamingSchemeGUID=
 [OutputGroup1]
 Name=OutputJob.OutJob
 Description=
-TargetOutputMedium=Manufacturing Files
-VariantName=[No Variations]
+TargetOutputMedium=Gerber_and_Drill_Files
+VariantName=Differential_Input
 VariantScope=1
 CurrentConfigurationName=
 TargetPrinter=PDFCreator
@@ -247,7 +247,7 @@ OutputEnabled8_OutputMedium10=2
 OutputEnabled8_OutputMedium11=0
 OutputDefault8=0
 Configuration8_Name1=OutputConfigurationParameter1
-Configuration8_Item1=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16973830~1,16973832~1,16973834~1,16777217~1,16842751~1,16973835~1,16973833~1,16973831~1,16908289~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=True|Sorted=False|Sorted=False|DocumentPath=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_frontpanel\frontpanel.PcbDoc
+Configuration8_Item1=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GenerateReports=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MergePadAndRegion=False|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16973830~1,16973832~1,16973834~1,16777217~1,16777218~1,16777219~1,16842751~1,16973835~1,16973833~1,16973831~1,16908289~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=True|Sorted=False|Sorted=False|DocumentPath=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc
 OutputType9=NC Drill
 OutputName9=NC Drill Files
 OutputCategory9=Fabrication
@@ -535,7 +535,7 @@ OutputName13=Pick_Place_JLC
 OutputCategory13=Assembly
 OutputDocumentPath13=
 OutputVariantName13=
-OutputEnabled13=1
+OutputEnabled13=0
 OutputEnabled13_OutputMedium1=0
 OutputEnabled13_OutputMedium2=0
 OutputEnabled13_OutputMedium3=0
@@ -555,7 +555,7 @@ OutputName14=BOM_JLC
 OutputCategory14=Report
 OutputDocumentPath14=
 OutputVariantName14=Standard
-OutputEnabled14=1
+OutputEnabled14=0
 OutputEnabled14_OutputMedium1=0
 OutputEnabled14_OutputMedium2=0
 OutputEnabled14_OutputMedium3=0
@@ -587,7 +587,7 @@ Configuration14_Item7=Quantity=56|Comment=116|Designator=107|MF=38|MPN=52|Value=
 [PublishSettings]
 OutputFilePath2=Project Outputs for Free Documents\
 ReleaseManaged2=1
-OutputBasePath2=Project Outputs for uz_frontpanel
+OutputBasePath2=Project Outputs for UZ_A_MAX11331
 OutputPathMedia2=
 OutputPathMediaValue2=
 OutputPathOutputer2=
@@ -614,7 +614,7 @@ PDFACompliance2=Disabled
 PDFVersion2=Default
 OutputFilePath3=\=ProjectRevision\
 ReleaseManaged3=1
-OutputBasePath3=Project Outputs for uz_frontpanel
+OutputBasePath3=Project Outputs for UZ_A_MAX11331
 OutputPathMedia3==ProjectRevision
 OutputPathMediaValue3==ProjectRevision
 OutputPathOutputer3=
@@ -641,7 +641,7 @@ PDFACompliance3=Disabled
 PDFVersion3=Default
 OutputFilePath4=\
 ReleaseManaged4=1
-OutputBasePath4=Project Outputs for uz_frontpanel
+OutputBasePath4=Project Outputs for UZ_A_MAX11331
 OutputPathMedia4==ProjectRevision
 OutputPathMediaValue4==ProjectRevision
 OutputPathOutputer4=
@@ -668,7 +668,7 @@ PDFACompliance4=Disabled
 PDFVersion4=Default
 OutputFilePath5=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_D_Optical_18Tx_14Tx4Rx\Project Outputs for Digital_Optical_18Tx_14Tx4Rx\Rev06\
 ReleaseManaged5=1
-OutputBasePath5=Project Outputs for uz_frontpanel
+OutputBasePath5=Project Outputs for UZ_A_MAX11331
 OutputPathMedia5==ProjectRevision
 OutputPathMediaValue5==ProjectRevision
 OutputPathOutputer5=[Output Type]
@@ -681,7 +681,7 @@ OutputFileNameSpecial5=
 OpenOutput5=1
 OutputFilePath6=D:\Work_Altium\TempSensorBoard_PT100\Project Outputs for TempSensorBoard_PT100\
 ReleaseManaged6=1
-OutputBasePath6=Project Outputs for uz_frontpanel
+OutputBasePath6=Project Outputs for UZ_A_MAX11331
 OutputPathMedia6=
 OutputPathMediaValue6=
 OutputPathOutputer6=[Output Type]
@@ -692,9 +692,9 @@ OutputFileNameMulti6=
 UseOutputNameForMulti6=1
 OutputFileNameSpecial6=
 OpenOutput6=0
-OutputFilePath7=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_frontpanel\Project Outputs for uz_frontpanel\Rev01\
+OutputFilePath7=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\Project Outputs for UZ_A_MAX11331\Rev01\
 ReleaseManaged7=1
-OutputBasePath7=Project Outputs for uz_frontpanel
+OutputBasePath7=Project Outputs for UZ_A_MAX11331
 OutputPathMedia7==ProjectRevision
 OutputPathMediaValue7==ProjectRevision
 OutputPathOutputer7=[Output Type]
@@ -707,7 +707,7 @@ OutputFileNameSpecial7=
 OpenOutput7=0
 OutputFilePath8=C:\Users\ga92wum\git\UltraZohm\PCB\ultrazohm_digital_optical_16tx_3rx_2vxx\Project Outputs for Digital_Optical_18Tx_14Tx4Rx_3vxx\
 ReleaseManaged8=1
-OutputBasePath8=Project Outputs for uz_frontpanel
+OutputBasePath8=Project Outputs for UZ_A_MAX11331
 OutputPathMedia8=
 OutputPathMediaValue8=
 OutputPathOutputer8=[Output Type]
@@ -718,9 +718,9 @@ OutputFileNameMulti8=='PickPlace_' + ProjectName + '_' + ProjectRevision
 UseOutputNameForMulti8=0
 OutputFileNameSpecial8=
 OpenOutput8=1
-OutputFilePath9=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_frontpanel\Project Outputs for uz_frontpanel\Rev01\
+OutputFilePath9=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\Project Outputs for UZ_A_MAX11331\Rev01\
 ReleaseManaged9=1
-OutputBasePath9=Project Outputs for uz_frontpanel
+OutputBasePath9=Project Outputs for UZ_A_MAX11331
 OutputPathMedia9==ProjectRevision
 OutputPathMediaValue9==ProjectRevision
 OutputPathOutputer9=[Output Type]
@@ -733,7 +733,7 @@ OutputFileNameSpecial9=
 OpenOutput9=0
 OutputFilePath10=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_frontpanel\Project Outputs for uz_frontpanel\Rev01\
 ReleaseManaged10=1
-OutputBasePath10=Project Outputs for uz_frontpanel
+OutputBasePath10=Project Outputs for UZ_A_MAX11331
 OutputPathMedia10==ProjectRevision
 OutputPathMediaValue10==ProjectRevision
 OutputPathOutputer10=[Output Type]
@@ -746,7 +746,7 @@ OutputFileNameSpecial10=
 OpenOutput10=0
 OutputFilePath11=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_D_Optical_18Tx_14Tx4Rx\Project Outputs for Digital_Optical_18Tx_14Tx4Rx\.PDF
 ReleaseManaged11=1
-OutputBasePath11=Project Outputs for uz_frontpanel
+OutputBasePath11=Project Outputs for UZ_A_MAX11331
 OutputPathMedia11=
 OutputPathMediaValue11=
 OutputPathOutputer11=[Output Type]
@@ -799,7 +799,7 @@ OpenGerberOutput6=0
 OpenNCDrillOutput6=0
 OpenIPCOutput6=0
 EnableReload6=0
-RelativeOutputPath7=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_frontpanel\Project Outputs for uz_frontpanel\Rev01\
+RelativeOutputPath7=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\Project Outputs for UZ_A_MAX11331\Rev01\
 OpenOutputs7=0
 AddToProject7=0
 TimestampFolder7=0
@@ -819,7 +819,7 @@ OpenGerberOutput8=0
 OpenNCDrillOutput8=0
 OpenIPCOutput8=0
 EnableReload8=0
-RelativeOutputPath9=C:\Users\ga92wum\git\UltraZohm\PCB\UZ_frontpanel\Project Outputs for uz_frontpanel\Rev01\
+RelativeOutputPath9=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\Project Outputs for UZ_A_MAX11331\Rev01\
 OpenOutputs9=0
 AddToProject9=0
 TimestampFolder9=0
