@@ -15,9 +15,9 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=OutputJob.OutJob
+Name=
 Description=
-TargetOutputMedium=Gerber_and_Drill_Files
+TargetOutputMedium=JLC_Assembly
 VariantName=Differential_Input
 VariantScope=1
 CurrentConfigurationName=
@@ -233,7 +233,7 @@ OutputName8=Gerber Files
 OutputCategory8=Fabrication
 OutputDocumentPath8=
 OutputVariantName8=
-OutputEnabled8=1
+OutputEnabled8=0
 OutputEnabled8_OutputMedium1=0
 OutputEnabled8_OutputMedium2=0
 OutputEnabled8_OutputMedium3=0
@@ -253,7 +253,7 @@ OutputName9=NC Drill Files
 OutputCategory9=Fabrication
 OutputDocumentPath9=
 OutputVariantName9=
-OutputEnabled9=1
+OutputEnabled9=0
 OutputEnabled9_OutputMedium1=0
 OutputEnabled9_OutputMedium2=0
 OutputEnabled9_OutputMedium3=0
@@ -535,7 +535,7 @@ OutputName13=Pick_Place_JLC
 OutputCategory13=Assembly
 OutputDocumentPath13=
 OutputVariantName13=
-OutputEnabled13=0
+OutputEnabled13=1
 OutputEnabled13_OutputMedium1=0
 OutputEnabled13_OutputMedium2=0
 OutputEnabled13_OutputMedium3=0
@@ -555,7 +555,7 @@ OutputName14=BOM_JLC
 OutputCategory14=Report
 OutputDocumentPath14=
 OutputVariantName14=Standard
-OutputEnabled14=0
+OutputEnabled14=1
 OutputEnabled14_OutputMedium1=0
 OutputEnabled14_OutputMedium2=0
 OutputEnabled14_OutputMedium3=0
@@ -578,11 +578,11 @@ Configuration14_Item3=Comment=True|MPN=True|Footprint=True
 Configuration14_Name4=OutputConfigurationParameter1
 Configuration14_Item4=??
 Configuration14_Name5=SortOrder
-Configuration14_Item5=Designator=Up
+Configuration14_Item5=LCSC Part #=Up
 Configuration14_Name6=VisibleOrder
-Configuration14_Item6=Quantity=56|Comment=116|Designator=107|MF=38|MPN=52|Value=102|Description=99|Footprint=149|Package=66|Voltage=51|Dielectric=59|LCSC Part #=85|JLCSMT Rotation=100
+Configuration14_Item6=Quantity=56|Comment=116|Designator=107|MF=38|MPN=52|Value=102|Description=99|Footprint=149|Package=66|Voltage=51|Dielectric=59|LCSC Part #=85|JLCSMT Rotation=100|LCSC Part Number=100
 Configuration14_Name7=VisibleOrder_Flat
-Configuration14_Item7=Quantity=56|Comment=116|Designator=107|MF=38|MPN=52|Value=102|Description=99|Footprint=149|Package=66|Voltage=51|Dielectric=59|LCSC Part #=85|JLCSMT Rotation=100
+Configuration14_Item7=Quantity=56|Comment=116|Designator=107|MF=38|MPN=52|Value=102|Description=99|Footprint=149|Package=66|Voltage=51|Dielectric=59|LCSC Part #=85|JLCSMT Rotation=100|LCSC Part Number=100
 
 [PublishSettings]
 OutputFilePath2=Project Outputs for Free Documents\
