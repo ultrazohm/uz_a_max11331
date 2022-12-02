@@ -237,23 +237,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document12]
-DocumentPath=CarrierConnector.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document13]
 DocumentPath=OpAmp.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -270,7 +253,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JWPYPLKO
 
-[Document14]
+[Document13]
 DocumentPath=uz_OutputJob.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -287,7 +270,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document15]
+[Document14]
 DocumentPath=Power_Supply.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -304,12 +287,29 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VYDLAGSG
 
+[Document15]
+DocumentPath=CarrierConnector.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [ProjectVariant1]
 UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=18
+VariationCount=22
 Variation1=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation2=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
 Variation3=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
@@ -328,6 +328,10 @@ Variation15=Designator=R11A|UniqueId=\1YGYMWNIX\FOQSRIME|Kind=1|AlternatePart=
 Variation16=Designator=R3|UniqueId=\RFVQAODF|Kind=1|AlternatePart= 
 Variation17=Designator=D3|UniqueId=\HJNGDLXZ|Kind=0|AlternatePart= 
 Variation18=Designator=X2|UniqueId=\LLLSCVGB\YRKNKLAE|Kind=1|AlternatePart= 
+Variation19=Designator=H1|UniqueId=\ISMUJODD\IECYWNZG|Kind=1|AlternatePart= 
+Variation20=Designator=H3|UniqueId=\ISMUJODD\RAACXHSL|Kind=1|AlternatePart= 
+Variation21=Designator=H2|UniqueId=\ISMUJODD\USUDKHHU|Kind=1|AlternatePart= 
+Variation22=Designator=H4|UniqueId=\ISMUJODD\FCBXLAMK|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -335,7 +339,7 @@ UniqueID=0A166520-C4FA-4CF0-A1A4-2F24D2B0FEC4
 Description=SingleEnded_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=13
+VariationCount=17
 Variation1=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\VPIXJELC|Kind=1|AlternatePart= 
 Variation2=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\DPMBDSKF|Kind=1|AlternatePart= 
 Variation3=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\VPIXJELC|Kind=1|AlternatePart= 
@@ -349,6 +353,10 @@ Variation10=Designator=R?|UniqueId=\LLLSCVGB\EYSQNRRV|Kind=1|AlternatePart=
 Variation11=Designator=R?|UniqueId=\LLLSCVGB\LOKENIYR|Kind=1|AlternatePart= 
 Variation12=Designator=R3|UniqueId=\RFVQAODF|Kind=1|AlternatePart= 
 Variation13=Designator=D3|UniqueId=\HJNGDLXZ|Kind=1|AlternatePart= 
+Variation14=Designator=H1|UniqueId=\ISMUJODD\IECYWNZG|Kind=1|AlternatePart= 
+Variation15=Designator=H3|UniqueId=\ISMUJODD\RAACXHSL|Kind=1|AlternatePart= 
+Variation16=Designator=H2|UniqueId=\ISMUJODD\USUDKHHU|Kind=1|AlternatePart= 
+Variation17=Designator=H4|UniqueId=\ISMUJODD\FCBXLAMK|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
@@ -356,28 +364,28 @@ DocumentPath=Project Outputs for UZ_A_MAX11331\Rev01\BOM\BOM_UZ_A_MAX11331_Rev01
 DItemRevisionGUID=
 
 [Parameter1]
-Name=ProjectRevision
-Value=Rev01
+Name=Author
+Value=Andreas Geiger
 
 [Parameter2]
-Name=ProjectNameCustom
-Value==ProjectName
-
-[Parameter3]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter4]
-Name=Date
-Value=11/2022
-
-[Parameter5]
 Name=AuthorParam
 Value=Andreas Geiger
 
+[Parameter3]
+Name=Date
+Value=11/2022
+
+[Parameter4]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter5]
+Name=ProjectNameCustom
+Value==ProjectName
+
 [Parameter6]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev01
 
 [Configuration1]
 Name=Sources
