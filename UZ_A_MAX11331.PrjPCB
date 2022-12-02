@@ -365,6 +365,10 @@ ParamVariationCount=0
 DocumentPath=Project Outputs for UZ_A_MAX11331\Rev01\BOM\BOM_UZ_A_MAX11331_Rev01.xlsx
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for UZ_A_MAX11331\Design Rule Check - UZ_A_MAX11331.html
+DItemRevisionGUID=
+
 [Parameter1]
 Name=Author
 Value=Andreas Geiger
