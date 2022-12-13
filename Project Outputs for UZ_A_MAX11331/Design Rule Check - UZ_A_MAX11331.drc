@@ -1,0 +1,306 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc
+Date     : 05.12.2022
+Time     : 08:36:56
+
+Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
+   Violation between Clearance Constraint: (0.239mm < 0.254mm) Between Track (85.869mm,25.635mm)(86.934mm,26.7mm) on Signal Layer 2 And Via (86.469mm,25.436mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.252mm < 0.254mm) Between Track (85.892mm,52.588mm)(85.892mm,53.458mm) on Signal Layer 2 And Via (86.469mm,53.236mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.239mm < 0.254mm) Between Track (85.892mm,53.458mm)(86.834mm,54.4mm) on Signal Layer 2 And Via (86.469mm,53.236mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.252mm < 0.254mm) Between Track (85.992mm,80.088mm)(85.992mm,80.958mm) on Signal Layer 2 And Via (86.569mm,80.736mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.239mm < 0.254mm) Between Track (85.992mm,80.958mm)(87.084mm,82.05mm) on Signal Layer 2 And Via (86.569mm,80.736mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.45mm < 0.5mm) Between Via (85.869mm,24.765mm) from Top Copper to Bottom Copper And Via (86.469mm,25.436mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.45mm < 0.5mm) Between Via (85.869mm,52.565mm) from Top Copper to Bottom Copper And Via (86.469mm,53.236mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.45mm < 0.5mm) Between Via (85.969mm,80.065mm) from Top Copper to Bottom Copper And Via (86.569mm,80.736mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.45mm < 0.5mm) Between Via (91.4mm,53.75mm) from Top Copper to Bottom Copper And Via (91.4mm,54.65mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.45mm < 0.5mm) Between Via (91.5mm,26.05mm) from Top Copper to Bottom Copper And Via (91.5mm,26.95mm) from Top Copper to Bottom Copper 
+   Violation between Clearance Constraint: (0.45mm < 0.5mm) Between Via (92.2mm,81.4mm) from Top Copper to Bottom Copper And Via (92.2mm,82.3mm) from Top Copper to Bottom Copper 
+Rule Violations :11
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.2mm) (Max=0.762mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.089mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.089mm) Between Pad C33-2(36.4mm,71mm) on Top Copper And Pad U5-5(35.125mm,70.525mm) on Top Copper [Top Mask] Mask Sliver [0.047mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.047mm < 0.089mm) Between Pad C33-2(36.4mm,71mm) on Top Copper And Pad U5-6(35.125mm,71.175mm) on Top Copper [Top Mask] Mask Sliver [0.047mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-1(90.701mm,19.883mm) on Top Copper And Pad U1A-2(90.701mm,20.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1A-1(90.701mm,19.883mm) on Top Copper And Pad U1A-32(90.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-10(89.516mm,24.068mm) on Top Copper And Pad U1A-11(89.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-10(89.516mm,24.068mm) on Top Copper And Pad U1A-9(90.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-11(89.016mm,24.068mm) on Top Copper And Pad U1A-12(88.516mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-12(88.516mm,24.068mm) on Top Copper And Pad U1A-13(88.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-13(88.016mm,24.068mm) on Top Copper And Pad U1A-14(87.516mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-14(87.516mm,24.068mm) on Top Copper And Pad U1A-15(87.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-15(87.016mm,24.068mm) on Top Copper And Pad U1A-16(86.516mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1A-16(86.516mm,24.068mm) on Top Copper And Pad U1A-17(85.831mm,23.383mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-17(85.831mm,23.383mm) on Top Copper And Pad U1A-18(85.831mm,22.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-18(85.831mm,22.883mm) on Top Copper And Pad U1A-19(85.831mm,22.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-19(85.831mm,22.383mm) on Top Copper And Pad U1A-20(85.831mm,21.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-2(90.701mm,20.383mm) on Top Copper And Pad U1A-3(90.701mm,20.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-20(85.831mm,21.883mm) on Top Copper And Pad U1A-21(85.831mm,21.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-21(85.831mm,21.383mm) on Top Copper And Pad U1A-22(85.831mm,20.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-22(85.831mm,20.883mm) on Top Copper And Pad U1A-23(85.831mm,20.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-23(85.831mm,20.383mm) on Top Copper And Pad U1A-24(85.831mm,19.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1A-24(85.831mm,19.883mm) on Top Copper And Pad U1A-25(86.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-25(86.516mm,19.198mm) on Top Copper And Pad U1A-26(87.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-26(87.016mm,19.198mm) on Top Copper And Pad U1A-27(87.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-27(87.516mm,19.198mm) on Top Copper And Pad U1A-28(88.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-28(88.016mm,19.198mm) on Top Copper And Pad U1A-29(88.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-29(88.516mm,19.198mm) on Top Copper And Pad U1A-30(89.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-3(90.701mm,20.883mm) on Top Copper And Pad U1A-4(90.701mm,21.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-30(89.016mm,19.198mm) on Top Copper And Pad U1A-31(89.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-31(89.516mm,19.198mm) on Top Copper And Pad U1A-32(90.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-4(90.701mm,21.383mm) on Top Copper And Pad U1A-5(90.701mm,21.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-5(90.701mm,21.883mm) on Top Copper And Pad U1A-6(90.701mm,22.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-6(90.701mm,22.383mm) on Top Copper And Pad U1A-7(90.701mm,22.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1A-7(90.701mm,22.883mm) on Top Copper And Pad U1A-8(90.701mm,23.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1A-8(90.701mm,23.383mm) on Top Copper And Pad U1A-9(90.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-1(90.683mm,47.702mm) on Top Copper And Pad U1B-2(90.683mm,48.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1B-1(90.683mm,47.702mm) on Top Copper And Pad U1B-32(89.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-10(89.498mm,51.887mm) on Top Copper And Pad U1B-11(88.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-10(89.498mm,51.887mm) on Top Copper And Pad U1B-9(89.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-11(88.998mm,51.887mm) on Top Copper And Pad U1B-12(88.498mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-12(88.498mm,51.887mm) on Top Copper And Pad U1B-13(87.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-13(87.998mm,51.887mm) on Top Copper And Pad U1B-14(87.498mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-14(87.498mm,51.887mm) on Top Copper And Pad U1B-15(86.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-15(86.998mm,51.887mm) on Top Copper And Pad U1B-16(86.498mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1B-16(86.498mm,51.887mm) on Top Copper And Pad U1B-17(85.813mm,51.202mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-17(85.813mm,51.202mm) on Top Copper And Pad U1B-18(85.813mm,50.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-18(85.813mm,50.702mm) on Top Copper And Pad U1B-19(85.813mm,50.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-19(85.813mm,50.202mm) on Top Copper And Pad U1B-20(85.813mm,49.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-2(90.683mm,48.202mm) on Top Copper And Pad U1B-3(90.683mm,48.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-20(85.813mm,49.702mm) on Top Copper And Pad U1B-21(85.813mm,49.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-21(85.813mm,49.202mm) on Top Copper And Pad U1B-22(85.813mm,48.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-22(85.813mm,48.702mm) on Top Copper And Pad U1B-23(85.813mm,48.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-23(85.813mm,48.202mm) on Top Copper And Pad U1B-24(85.813mm,47.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1B-24(85.813mm,47.702mm) on Top Copper And Pad U1B-25(86.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-25(86.498mm,47.017mm) on Top Copper And Pad U1B-26(86.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-26(86.998mm,47.017mm) on Top Copper And Pad U1B-27(87.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-27(87.498mm,47.017mm) on Top Copper And Pad U1B-28(87.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-28(87.998mm,47.017mm) on Top Copper And Pad U1B-29(88.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-29(88.498mm,47.017mm) on Top Copper And Pad U1B-30(88.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-3(90.683mm,48.702mm) on Top Copper And Pad U1B-4(90.683mm,49.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-30(88.998mm,47.017mm) on Top Copper And Pad U1B-31(89.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-31(89.498mm,47.017mm) on Top Copper And Pad U1B-32(89.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-4(90.683mm,49.202mm) on Top Copper And Pad U1B-5(90.683mm,49.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-5(90.683mm,49.702mm) on Top Copper And Pad U1B-6(90.683mm,50.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-6(90.683mm,50.202mm) on Top Copper And Pad U1B-7(90.683mm,50.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1B-7(90.683mm,50.702mm) on Top Copper And Pad U1B-8(90.683mm,51.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1B-8(90.683mm,51.202mm) on Top Copper And Pad U1B-9(89.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-1(90.785mm,75.215mm) on Top Copper And Pad U1C-2(90.785mm,75.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1C-1(90.785mm,75.215mm) on Top Copper And Pad U1C-32(90.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-10(89.6mm,79.4mm) on Top Copper And Pad U1C-11(89.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-10(89.6mm,79.4mm) on Top Copper And Pad U1C-9(90.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-11(89.1mm,79.4mm) on Top Copper And Pad U1C-12(88.6mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-12(88.6mm,79.4mm) on Top Copper And Pad U1C-13(88.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-13(88.1mm,79.4mm) on Top Copper And Pad U1C-14(87.6mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-14(87.6mm,79.4mm) on Top Copper And Pad U1C-15(87.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-15(87.1mm,79.4mm) on Top Copper And Pad U1C-16(86.6mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1C-16(86.6mm,79.4mm) on Top Copper And Pad U1C-17(85.915mm,78.715mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-17(85.915mm,78.715mm) on Top Copper And Pad U1C-18(85.915mm,78.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-18(85.915mm,78.215mm) on Top Copper And Pad U1C-19(85.915mm,77.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-19(85.915mm,77.715mm) on Top Copper And Pad U1C-20(85.915mm,77.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-2(90.785mm,75.715mm) on Top Copper And Pad U1C-3(90.785mm,76.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-20(85.915mm,77.215mm) on Top Copper And Pad U1C-21(85.915mm,76.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-21(85.915mm,76.715mm) on Top Copper And Pad U1C-22(85.915mm,76.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-22(85.915mm,76.215mm) on Top Copper And Pad U1C-23(85.915mm,75.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-23(85.915mm,75.715mm) on Top Copper And Pad U1C-24(85.915mm,75.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1C-24(85.915mm,75.215mm) on Top Copper And Pad U1C-25(86.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-25(86.6mm,74.53mm) on Top Copper And Pad U1C-26(87.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-26(87.1mm,74.53mm) on Top Copper And Pad U1C-27(87.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-27(87.6mm,74.53mm) on Top Copper And Pad U1C-28(88.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-28(88.1mm,74.53mm) on Top Copper And Pad U1C-29(88.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-29(88.6mm,74.53mm) on Top Copper And Pad U1C-30(89.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-3(90.785mm,76.215mm) on Top Copper And Pad U1C-4(90.785mm,76.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-30(89.1mm,74.53mm) on Top Copper And Pad U1C-31(89.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-31(89.6mm,74.53mm) on Top Copper And Pad U1C-32(90.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-4(90.785mm,76.715mm) on Top Copper And Pad U1C-5(90.785mm,77.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-5(90.785mm,77.215mm) on Top Copper And Pad U1C-6(90.785mm,77.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-6(90.785mm,77.715mm) on Top Copper And Pad U1C-7(90.785mm,78.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.089mm) Between Pad U1C-7(90.785mm,78.215mm) on Top Copper And Pad U1C-8(90.785mm,78.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.078mm < 0.089mm) Between Pad U1C-8(90.785mm,78.715mm) on Top Copper And Pad U1C-9(90.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]
+Rule Violations :98
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (OnLayer('Top Overlay') or OnLayer('Bottom Overlay'))
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Matched Lengths(Tolerance=0.254mm) (All)
+   Violation between Matched Net Lengths: Between Net AIN_N1 And Net AIN_P1 Actual Difference against AIN_P1 is: 1.539mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N10 And Net AIN_P10 Actual Difference against AIN_P10 is: 4.103mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N11 And Net AIN_P11 Actual Difference against AIN_P11 is: 0.651mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N12 And Net AIN_P12 Actual Difference against AIN_P12 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N13 And Net AIN_P13 Actual Difference against AIN_P13 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N14 And Net AIN_P14 Actual Difference against AIN_P14 is: 4.103mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N15 And Net AIN_P15 Actual Difference against AIN_P15 is: 0.651mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N16 And Net AIN_P16 Actual Difference against AIN_P16 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N17 And Net AIN_P17 Actual Difference against AIN_P17 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N18 And Net AIN_P18 Actual Difference against AIN_P18 is: 4.111mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N19 And Net AIN_P19 Actual Difference against AIN_P19 is: 0.651mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N2 And Net AIN_P2 Actual Difference against AIN_P2 is: 4.103mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N20 And Net AIN_P20 Actual Difference against AIN_P20 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N21 And Net AIN_P21 Actual Difference against AIN_P21 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N22 And Net AIN_P22 Actual Difference against AIN_P22 is: 4.103mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N23 And Net AIN_P23 Actual Difference against AIN_P23 is: 0.651mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N24 And Net AIN_P24 Actual Difference against AIN_P24 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N3 And Net AIN_P3 Actual Difference against AIN_P3 is: 0.683mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N4 And Net AIN_P4 Actual Difference against AIN_P4 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N5 And Net AIN_P5 Actual Difference against AIN_P5 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N6 And Net AIN_P6 Actual Difference against AIN_P6 is: 4.103mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N7 And Net AIN_P7 Actual Difference against AIN_P7 is: 0.651mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N8 And Net AIN_P8 Actual Difference against AIN_P8 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_N9 And Net AIN_P9 Actual Difference against AIN_P9 is: 1.516mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N1 And Net AIN_SCALED_P1 Actual Difference against AIN_SCALED_P1 is: 0.994mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N10 And Net AIN_SCALED_P10 Actual Difference against AIN_SCALED_P10 is: 0.999mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N13 And Net AIN_SCALED_P13 Actual Difference against AIN_SCALED_P13 is: 0.254mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N15 And Net AIN_SCALED_P15 Actual Difference against AIN_SCALED_P15 is: 0.337mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N16 And Net AIN_SCALED_P16 Actual Difference against AIN_SCALED_P16 is: 1.45mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N17 And Net AIN_SCALED_P17 Actual Difference against AIN_SCALED_P17 is: 0.994mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N18 And Net AIN_SCALED_P18 Actual Difference against AIN_SCALED_P18 is: 0.994mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N2 And Net AIN_SCALED_P2 Actual Difference against AIN_SCALED_P2 is: 0.994mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N23 And Net AIN_SCALED_P23 Actual Difference against AIN_SCALED_P23 is: 0.53mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N24 And Net AIN_SCALED_P24 Actual Difference against AIN_SCALED_P24 is: 1.687mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N4 And Net AIN_SCALED_P4 Actual Difference against AIN_SCALED_P4 is: 0.487mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N7 And Net AIN_SCALED_P7 Actual Difference against AIN_SCALED_P7 is: 0.455mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N8 And Net AIN_SCALED_P8 Actual Difference against AIN_SCALED_P8 is: 1.208mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net AIN_SCALED_N9 And Net AIN_SCALED_P9 Actual Difference against AIN_SCALED_P9 is: 0.994mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net IN_FILTA_N And Net IN_FILTA_P Actual Difference against IN_FILTA_P is: 2.304mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net IN_FILTB_N And Net IN_FILTB_P Actual Difference against IN_FILTB_P is: 2.404mm, Tolerance : 0.254mm. 
+   Violation between Matched Net Lengths: Between Net IN_FILTC_N And Net IN_FILTC_P Actual Difference against IN_FILTC_P is: 3.251mm, Tolerance : 0.254mm. 
+Rule Violations :41
+
+Processing Rule : Room AISC11 (Bounding Region = (122.1mm, 74.1mm, 134.409mm, 77.5mm) (InComponentClass('AISC11'))
+Rule Violations :0
+
+Processing Rule : Room AISC10 (Bounding Region = (122.1mm, 70.6mm, 134.409mm, 74mm) (InComponentClass('AISC10'))
+Rule Violations :0
+
+Processing Rule : Room AISC1 (Bounding Region = (122.1mm, 39.1mm, 134.409mm, 42.5mm) (InComponentClass('AISC1'))
+Rule Violations :0
+
+Processing Rule : Room AISC2 (Bounding Region = (122.1mm, 42.6mm, 134.409mm, 46mm) (InComponentClass('AISC2'))
+Rule Violations :0
+
+Processing Rule : Room AISC3 (Bounding Region = (122.1mm, 46.1mm, 134.409mm, 49.5mm) (InComponentClass('AISC3'))
+Rule Violations :0
+
+Processing Rule : Room ADC2 (Bounding Region = (101.807mm, 73.275mm, 116.607mm, 88.188mm) (Disabled)(InComponentClass('ADC2'))
+Rule Violations :0
+
+Processing Rule : Room Component_LowerEdgeKeepOut (Bounding Region = (21.209mm, 30.988mm, 163.209mm, 33.988mm) (All)
+Rule Violations :0
+
+Processing Rule : Room Component_UpperEdgeKeepOut (Bounding Region = (21.209mm, 127.988mm, 163.209mm, 130.988mm) (All)
+Rule Violations :0
+
+Processing Rule : Room AISC7 (Bounding Region = (122.1mm, 60.1mm, 134.409mm, 63.5mm) (InComponentClass('AISC7'))
+Rule Violations :0
+
+Processing Rule : Room AISC8 (Bounding Region = (122.1mm, 63.6mm, 134.409mm, 67mm) (InComponentClass('AISC8'))
+Rule Violations :0
+
+Processing Rule : Room AISC9 (Bounding Region = (122.1mm, 67.1mm, 134.409mm, 70.5mm) (InComponentClass('AISC9'))
+Rule Violations :0
+
+Processing Rule : Room AISC4 (Bounding Region = (122.1mm, 49.6mm, 134.409mm, 53mm) (InComponentClass('AISC4'))
+Rule Violations :0
+
+Processing Rule : Room AISC5 (Bounding Region = (122.1mm, 53.1mm, 134.409mm, 56.5mm) (InComponentClass('AISC5'))
+Rule Violations :0
+
+Processing Rule : Room AISC6 (Bounding Region = (122.1mm, 56.6mm, 134.409mm, 60mm) (InComponentClass('AISC6'))
+Rule Violations :0
+
+Processing Rule : Room OpAmp2 (Bounding Region = (82.209mm, 85.738mm, 109.309mm, 97.838mm) (InComponentClass('OpAmp2'))
+Rule Violations :0
+
+Processing Rule : Room OpAmp3 (Bounding Region = (82.309mm, 113.288mm, 109.409mm, 125.388mm) (InComponentClass('OpAmp3'))
+Rule Violations :0
+
+Processing Rule : Room OpAmp1 (Bounding Region = (82.209mm, 57.988mm, 109.309mm, 70.088mm) (InComponentClass('OpAmp1'))
+Rule Violations :0
+
+Processing Rule : Room ADC1 (Bounding Region = (101.825mm, 45.456mm, 116.625mm, 60.388mm) (Disabled)(InComponentClass('ADC1'))
+Rule Violations :0
+
+Processing Rule : Room ADC3 (Bounding Region = (101.909mm, 100.788mm, 116.709mm, 115.588mm) (Disabled)(InComponentClass('ADC3'))
+Rule Violations :0
+
+Processing Rule : Room U_Power_Supply (Bounding Region = (21.709mm, 93.988mm, 70.6mm, 124.5mm) (InComponentClass('U_Power_Supply'))
+Rule Violations :0
+
+Processing Rule : Room AISC21 (Bounding Region = (122.1mm, 109.1mm, 134.409mm, 112.5mm) (InComponentClass('AISC21'))
+Rule Violations :0
+
+Processing Rule : Room AISC20 (Bounding Region = (122.1mm, 105.6mm, 134.409mm, 109mm) (InComponentClass('AISC20'))
+Rule Violations :0
+
+Processing Rule : Room AISC22 (Bounding Region = (122.1mm, 112.6mm, 134.409mm, 116mm) (InComponentClass('AISC22'))
+Rule Violations :0
+
+Processing Rule : Room AISC24 (Bounding Region = (122.1mm, 119.6mm, 134.409mm, 123mm) (InComponentClass('AISC24'))
+Rule Violations :0
+
+Processing Rule : Room AISC23 (Bounding Region = (122.1mm, 116.1mm, 134.409mm, 119.5mm) (InComponentClass('AISC23'))
+Rule Violations :0
+
+Processing Rule : Room AISC14 (Bounding Region = (122.1mm, 84.6mm, 134.409mm, 88mm) (InComponentClass('AISC14'))
+Rule Violations :0
+
+Processing Rule : Room AISC15 (Bounding Region = (122.1mm, 88.1mm, 134.409mm, 91.5mm) (InComponentClass('AISC15'))
+Rule Violations :0
+
+Processing Rule : Room AISC12 (Bounding Region = (122.1mm, 77.6mm, 134.409mm, 81mm) (InComponentClass('AISC12'))
+Rule Violations :0
+
+Processing Rule : Room AISC13 (Bounding Region = (122.1mm, 81.1mm, 134.409mm, 84.5mm) (InComponentClass('AISC13'))
+Rule Violations :0
+
+Processing Rule : Room AISC16 (Bounding Region = (122.1mm, 91.6mm, 134.409mm, 95mm) (InComponentClass('AISC16'))
+Rule Violations :0
+
+Processing Rule : Room AISC18 (Bounding Region = (122.1mm, 98.6mm, 134.409mm, 102mm) (InComponentClass('AISC18'))
+Rule Violations :0
+
+Processing Rule : Room AISC19 (Bounding Region = (122.1mm, 102.1mm, 134.409mm, 105.5mm) (InComponentClass('AISC19'))
+Rule Violations :0
+
+Processing Rule : Room AISC17 (Bounding Region = (122.1mm, 95.1mm, 134.409mm, 98.5mm) (InComponentClass('AISC17'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 150
+Waived Violations : 0
+Time Elapsed        : 00:00:03

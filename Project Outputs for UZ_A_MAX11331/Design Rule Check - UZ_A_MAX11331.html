@@ -1,0 +1,930 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">05.12.2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">08:36:56</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc" class="file"><acronym title="C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc">C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">150</td></tr>
+</table>
+</td>
+</table><a name="IDV012GAS0IT1UGAID4G5M3TZ0THXVAXGYMNH3VYCOANJAOA42XRUB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHX0TPV5LSZ4WJW1T31PH5QANFCHHO44D0IFP3EKEB504JSZMKZPJ">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">11</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHXRR2AEABNL2ISUT5WGA0AWNAPE5OB3J4QFUJPJGRW5CWW4G4C">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJ02A3LE4HNZDFFXMMY4W3VWBTBZOCKDQ0XOLFCMXLCPE5X0IWQD">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMPYSYQXSV1QFCGVEKXKZW2H4VJXSRCITLH3CV0EB2MIFXD0C2NRD">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK11ZPHD41UJHPPICFKY3OYOZS2RJ25MYPNGGFMACDEYPIMJIJBM">Width Constraint (Min=0.2mm) (Max=0.762mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOEI0K0VFGHBBLQPZJGMHQ4JUCJWEUESIFS42BOH0MOSUUAX2Y20F">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGLAF5R2L2THDLTLZLYGHRGHULKHEWGTFADZFNNMGR4KEJ5SWU5E">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDE5M1K1GEA1V5I4PYKI32HRQYHPCVTDBED1SHCCLAJXZMX1CIG21I">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLSBEGDSYVY0BGOWLHZCNQEAVLENPRODRV0UOZULGQNSYHZGPEJEO">Minimum Solder Mask Sliver (Gap=0.089mm) (All),(All)</a></td>
+<td class="column2">98</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJDIOPXPXRQTOHDF0JQPAXSJBOJ0M5A4GW4AQVJKANYEW0IVPNSKD">Silk To Solder Mask (Clearance=0mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSYKCOSLWTCUGMMLGZA0QDXG3SIY21AXUUZ5EOBMEFKSWGE5T2THC">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1D2PFAYI0TAWEZM0EUMYUHYQWKGSRQNNNA403ODLQTKFLWB04EYI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFLGVZ30XDE4RICCRJSLTKGOOIE415XOYZZWTQ3B5NQTLJEPXLUYD">Board Clearance Constraint (Gap=0mm) (OnLayer('Top Overlay') or OnLayer('Bottom Overlay'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNCC0YSOMPYE1IFTMNQLX0F3IUO5C1BQ1E3VBQZDX3V0E50SUUUS">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNUFQ5FUDYFYPC2DP5UPHTAKM0NEUFGWCBACGKCGJVBWDP0DFKDI">Matched Lengths(Tolerance=0.254mm) (All)</a></td>
+<td class="column2">41</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXZTEWUCILLV4NS5A4XAVW2EVETWRDPRWSKIOJ0AJ5XLSDRWFOI">Room AISC11 (Bounding Region = (122.1mm, 74.1mm, 134.409mm, 77.5mm) (InComponentClass('AISC11'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXVOBS4RRHZ0WPS2KGHA4JAVVHKPVDTOQBNJHMWLY1H5O0JGA1M3F">Room AISC10 (Bounding Region = (122.1mm, 70.6mm, 134.409mm, 74mm) (InComponentClass('AISC10'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3410SNC4GRPZLMLOZ0XW0QU1HHZCCIM2RGRRHSH42F5I5I55ZM1I">Room AISC1 (Bounding Region = (122.1mm, 39.1mm, 134.409mm, 42.5mm) (InComponentClass('AISC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGPD22XBGRL40JWVQMWAL4TTFNOD45RUI5JDTZBMZDIINVF2GAJVN">Room AISC2 (Bounding Region = (122.1mm, 42.6mm, 134.409mm, 46mm) (InComponentClass('AISC2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZPEQSSPP2GSLCOMSY1KNAQHHSORVMK3Y4NJVQU52KAELKCKWLQF">Room AISC3 (Bounding Region = (122.1mm, 46.1mm, 134.409mm, 49.5mm) (InComponentClass('AISC3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5YCI52AQXW0RCBUF1455WLXF2OLJWZUFODIMN0CUXB2TUELEFJOE">Room ADC2 (Bounding Region = (101.807mm, 73.275mm, 116.607mm, 88.188mm) (Disabled)(InComponentClass('ADC2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPTRPNJQOKXLJLR41KQY1T00Q5EYTDBTCGPEND1JBU2XTORCY2PVH">Room Component_LowerEdgeKeepOut (Bounding Region = (21.209mm, 30.988mm, 163.209mm, 33.988mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR2BDQXV3NTSIEID1MW4HF5MDUHXXTHYDMQ4RMTIHWYZ504EE2QCB">Room Component_UpperEdgeKeepOut (Bounding Region = (21.209mm, 127.988mm, 163.209mm, 130.988mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1ZT3SAGHQQXOASW4TOK3V2YJPRV0LZHEW2DJFHGP4VPLIAFCDWI">Room AISC7 (Bounding Region = (122.1mm, 60.1mm, 134.409mm, 63.5mm) (InComponentClass('AISC7'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2V243EW5NOTRIXPJLC4PQMXRUGW1ZNTKCR1MLWAF4N21XFVSXG">Room AISC8 (Bounding Region = (122.1mm, 63.6mm, 134.409mm, 67mm) (InComponentClass('AISC8'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVUX5445L0DTKJVP20LQ0UXG2LDXAIGHEZQRCPTCXTLJ4XVZB5W0D">Room AISC9 (Bounding Region = (122.1mm, 67.1mm, 134.409mm, 70.5mm) (InComponentClass('AISC9'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXG0ER4ARIF1SJGC1BF2BMZDTEHBLTPCHRG1RVAJNZZWDD1JR3HXL">Room AISC4 (Bounding Region = (122.1mm, 49.6mm, 134.409mm, 53mm) (InComponentClass('AISC4'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDICTWVP0JLTJJK11QH2OHHCPBGLZHTW2VTEM01VEIQKVXB13VB4XL">Room AISC5 (Bounding Region = (122.1mm, 53.1mm, 134.409mm, 56.5mm) (InComponentClass('AISC5'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2222M1GPSEK1K5TDYCC4A1ACRMUA1TWFMAJEPDLKPK3BJM0W0OXG">Room AISC6 (Bounding Region = (122.1mm, 56.6mm, 134.409mm, 60mm) (InComponentClass('AISC6'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2DKZZLKTE3D3DHE3RRN1DVYW5PXMIYHDYI2R3QBMRE3ZB4QFSATG">Room OpAmp2 (Bounding Region = (82.209mm, 85.738mm, 109.309mm, 97.838mm) (InComponentClass('OpAmp2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFW2WHIMK3SKDMX1XRXNBC0XSTIVK01XTZVLNX2J00LQ4EQZZOBPM">Room OpAmp3 (Bounding Region = (82.309mm, 113.288mm, 109.409mm, 125.388mm) (InComponentClass('OpAmp3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNEBQLF4JBNNJLS1W5MXU2OOKWGTIWNZRNKSEKKE43HA5QZFVRUBD">Room OpAmp1 (Bounding Region = (82.209mm, 57.988mm, 109.309mm, 70.088mm) (InComponentClass('OpAmp1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPMQREBSLQG44DCRZ2LXVQDFRTL4WXHN1FOWFXVBULRWMDYSFRBXL">Room ADC1 (Bounding Region = (101.825mm, 45.456mm, 116.625mm, 60.388mm) (Disabled)(InComponentClass('ADC1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKRTA24TDDVQNHB3VOJGKHEWSULCEHDOHA0TSO5D0CCNXEJZMOOK">Room ADC3 (Bounding Region = (101.909mm, 100.788mm, 116.709mm, 115.588mm) (Disabled)(InComponentClass('ADC3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5RNSEF2HWF1ALJPY2SFHJWTLCO5ZKAU3XT3RLKGFFB2YCD04ONIN">Room U_Power_Supply (Bounding Region = (21.709mm, 93.988mm, 70.6mm, 124.5mm) (InComponentClass('U_Power_Supply'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4NGQSI51TGMPLLXSKTVLJA5WYN4DQDHJKFB45UMYG2DSYKVKDAIN">Room AISC21 (Bounding Region = (122.1mm, 109.1mm, 134.409mm, 112.5mm) (InComponentClass('AISC21'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOSJNAYL45TMSNMP4KL3NZD5CXH5CIA5WV50CPRLOKOFF0BUZ43SM">Room AISC20 (Bounding Region = (122.1mm, 105.6mm, 134.409mm, 109mm) (InComponentClass('AISC20'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOCFSWOVVAA03BZP4M34PDYB10BZOTN0QUEZNJULDCIWGRFIG4I2M">Room AISC22 (Bounding Region = (122.1mm, 112.6mm, 134.409mm, 116mm) (InComponentClass('AISC22'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBYMCLHVFCQU0FYHM4OX045ODKHJ1EME5HLDN1JDYA1Z3JDMY2G3M">Room AISC24 (Bounding Region = (122.1mm, 119.6mm, 134.409mm, 123mm) (InComponentClass('AISC24'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSQGDK5HXNYGZO4V22VEMDTGHPH35NYQWMCBF5KPKONY0FBHCGECM">Room AISC23 (Bounding Region = (122.1mm, 116.1mm, 134.409mm, 119.5mm) (InComponentClass('AISC23'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM51C4BHPB5Q0BCA2UUGUJROADPL15FYEJEN4B3K5QWAFV0GPOSNJ">Room AISC14 (Bounding Region = (122.1mm, 84.6mm, 134.409mm, 88mm) (InComponentClass('AISC14'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMMOTGVGS4AFUEMUBIG43PUNHUYMIP0IS2PKNFDBE10YNA0QDBZD">Room AISC15 (Bounding Region = (122.1mm, 88.1mm, 134.409mm, 91.5mm) (InComponentClass('AISC15'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDABP1ZOSVGLXKEOSE32HVS4M2NIQIXBDRZERKWSGZWLGREBT1IOML">Room AISC12 (Bounding Region = (122.1mm, 77.6mm, 134.409mm, 81mm) (InComponentClass('AISC12'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4120NEVCRD5LHGIIZEXSJFKFJKJ2CO2FAUCQISL11JH1NGBVI35E">Room AISC13 (Bounding Region = (122.1mm, 81.1mm, 134.409mm, 84.5mm) (InComponentClass('AISC13'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZQMY1WP0MEGPMNGIDMIPUSUTSIGZBB5IXC3P33KVZFSJNF4HLMII">Room AISC16 (Bounding Region = (122.1mm, 91.6mm, 134.409mm, 95mm) (InComponentClass('AISC16'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDB0DMRH03CXMUMIG3UY4YNW22FBTOM3TIN5LDZBXDV2YBXIIWPBK">Room AISC18 (Bounding Region = (122.1mm, 98.6mm, 134.409mm, 102mm) (InComponentClass('AISC18'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN3OMX41QAVPNEB4LLK5HKMSOJKK22A024UKLIXABXY3LNJK52JH">Room AISC19 (Bounding Region = (122.1mm, 102.1mm, 134.409mm, 105.5mm) (InComponentClass('AISC19'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2YK3IDDGXSJPGFYAFT4CESJD3EVWYV2F3G5ULVFIOASAFOJZVSSF">Room AISC17 (Bounding Region = (122.1mm, 95.1mm, 134.409mm, 98.5mm) (InComponentClass('AISC17'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDBIDAS41WQE3NCADP2WINYUJDJY3WF5QLPJUZNOGHM2FUKAY3KIM">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">150</td>
+</tr>
+</table><br><a name="IDHX0TPV5LSZ4WJW1T31PH5QANFCHHO44D0IFP3EKEB504JSZMKZPJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.2mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4224.069mil|Location2.X=4238.077mil|Location1.Y=2225.405mil|Location2.Y=2239.511mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4224.069mil|Location2.X=4238.077mil|Location1.Y=2225.405mil|Location2.Y=2239.511mil|Absolute=True">Clearance Constraint: (0.239mm &lt; 0.254mm) Between Track (85.869mm,25.635mm)(86.934mm,26.7mm) on Signal Layer 2 And Via (86.469mm,25.436mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4219.845mil|Location2.X=4231.095mil|Location1.Y=3310.296mil|Location2.Y=3321.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4219.845mil|Location2.X=4231.095mil|Location1.Y=3310.296mil|Location2.Y=3321.546mil|Absolute=True">Clearance Constraint: (0.252mm &lt; 0.254mm) Between Track (85.892mm,52.588mm)(85.892mm,53.458mm) on Signal Layer 2 And Via (86.469mm,53.236mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4224.069mil|Location2.X=4238.077mil|Location1.Y=3319.893mil|Location2.Y=3333.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4224.069mil|Location2.X=4238.077mil|Location1.Y=3319.893mil|Location2.Y=3333.999mil|Absolute=True">Clearance Constraint: (0.239mm &lt; 0.254mm) Between Track (85.892mm,53.458mm)(86.834mm,54.4mm) on Signal Layer 2 And Via (86.469mm,53.236mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.782mil|Location2.X=4235.032mil|Location1.Y=4392.973mil|Location2.Y=4404.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.782mil|Location2.X=4235.032mil|Location1.Y=4392.973mil|Location2.Y=4404.223mil|Absolute=True">Clearance Constraint: (0.252mm &lt; 0.254mm) Between Track (85.992mm,80.088mm)(85.992mm,80.958mm) on Signal Layer 2 And Via (86.569mm,80.736mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4228.006mil|Location2.X=4242.013mil|Location1.Y=4402.57mil|Location2.Y=4416.676mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4228.006mil|Location2.X=4242.013mil|Location1.Y=4402.57mil|Location2.Y=4416.676mil|Absolute=True">Clearance Constraint: (0.239mm &lt; 0.254mm) Between Track (85.992mm,80.958mm)(87.084mm,82.05mm) on Signal Layer 2 And Via (86.569mm,80.736mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4217.015mil|Location2.X=4244.316mil|Location1.Y=2193.485mil|Location2.Y=2218.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4217.015mil|Location2.X=4244.316mil|Location1.Y=2193.485mil|Location2.Y=2218.693mil|Absolute=True">Clearance Constraint: (0.45mm &lt; 0.5mm) Between Via (85.869mm,24.765mm) from Top Copper to Bottom Copper And Via (86.469mm,25.436mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4217.015mil|Location2.X=4244.316mil|Location1.Y=3287.974mil|Location2.Y=3313.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4217.015mil|Location2.X=4244.316mil|Location1.Y=3287.974mil|Location2.Y=3313.181mil|Absolute=True">Clearance Constraint: (0.45mm &lt; 0.5mm) Between Via (85.869mm,52.565mm) from Top Copper to Bottom Copper And Via (86.469mm,53.236mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4220.952mil|Location2.X=4248.253mil|Location1.Y=4370.651mil|Location2.Y=4395.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4220.952mil|Location2.X=4248.253mil|Location1.Y=4370.651mil|Location2.Y=4395.858mil|Absolute=True">Clearance Constraint: (0.45mm &lt; 0.5mm) Between Via (85.969mm,80.065mm) from Top Copper to Bottom Copper And Via (86.569mm,80.736mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4422.958mil|Location2.X=4455.31mil|Location1.Y=3343.391mil|Location2.Y=3364.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4422.958mil|Location2.X=4455.31mil|Location1.Y=3343.391mil|Location2.Y=3364.326mil|Absolute=True">Clearance Constraint: (0.45mm &lt; 0.5mm) Between Via (91.4mm,53.75mm) from Top Copper to Bottom Copper And Via (91.4mm,54.65mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4426.895mil|Location2.X=4459.247mil|Location1.Y=2252.84mil|Location2.Y=2273.775mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4426.895mil|Location2.X=4459.247mil|Location1.Y=2252.84mil|Location2.Y=2273.775mil|Absolute=True">Clearance Constraint: (0.45mm &lt; 0.5mm) Between Via (91.5mm,26.05mm) from Top Copper to Bottom Copper And Via (91.5mm,26.95mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4454.454mil|Location2.X=4486.806mil|Location1.Y=4431.973mil|Location2.Y=4452.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4454.454mil|Location2.X=4486.806mil|Location1.Y=4431.973mil|Location2.Y=4452.908mil|Absolute=True">Clearance Constraint: (0.45mm &lt; 0.5mm) Between Via (92.2mm,81.4mm) from Top Copper to Bottom Copper And Via (92.2mm,82.3mm) from Top Copper to Bottom Copper </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDLSBEGDSYVY0BGOWLHZCNQEAVLENPRODRV0UOZULGQNSYHZGPEJEO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.089mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2243.058mil|Location2.X=2247.808mil|Location1.Y=3995.121mil|Location2.Y=3999.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2243.058mil|Location2.X=2247.808mil|Location1.Y=3995.121mil|Location2.Y=3999.871mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.089mm) Between Pad C33-2(36.4mm,71mm) on Top Copper And Pad U5-5(35.125mm,70.525mm) on Top Copper [Top Mask] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2243.058mil|Location2.X=2247.808mil|Location1.Y=4012.881mil|Location2.Y=4017.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2243.058mil|Location2.X=2247.808mil|Location1.Y=4012.881mil|Location2.Y=4017.631mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.089mm) Between Pad C33-2(36.4mm,71mm) on Top Copper And Pad U5-6(35.125mm,71.175mm) on Top Copper [Top Mask] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2010.271mil|Location2.Y=2015.021mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2010.271mil|Location2.Y=2015.021mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-1(90.701mm,19.883mm) on Top Copper And Pad U1A-2(90.701mm,20.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.252mil|Location2.X=4391.749mil|Location1.Y=1990.074mil|Location2.Y=1997.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.252mil|Location2.X=4391.749mil|Location1.Y=1990.074mil|Location2.Y=1997.501mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1A-1(90.701mm,19.883mm) on Top Copper And Pad U1A-32(90.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4347.047mil|Location2.X=4351.797mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4347.047mil|Location2.X=4351.797mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-10(89.516mm,24.068mm) on Top Copper And Pad U1A-11(89.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366.732mil|Location2.X=4371.482mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366.732mil|Location2.X=4371.482mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-10(89.516mm,24.068mm) on Top Copper And Pad U1A-9(90.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4327.362mil|Location2.X=4332.112mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4327.362mil|Location2.X=4332.112mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-11(89.016mm,24.068mm) on Top Copper And Pad U1A-12(88.516mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.677mil|Location2.X=4312.427mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.677mil|Location2.X=4312.427mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-12(88.516mm,24.068mm) on Top Copper And Pad U1A-13(88.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.992mil|Location2.X=4292.742mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.992mil|Location2.X=4292.742mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-13(88.016mm,24.068mm) on Top Copper And Pad U1A-14(87.516mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4268.307mil|Location2.X=4273.057mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4268.307mil|Location2.X=4273.057mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-14(87.516mm,24.068mm) on Top Copper And Pad U1A-15(87.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4248.622mil|Location2.X=4253.372mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4248.622mil|Location2.X=4253.372mil|Location1.Y=2153.578mil|Location2.Y=2158.328mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-15(87.016mm,24.068mm) on Top Copper And Pad U1A-16(86.516mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.102mil|Location2.X=4238.6mil|Location1.Y=2143.224mil|Location2.Y=2150.651mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.102mil|Location2.X=4238.6mil|Location1.Y=2143.224mil|Location2.Y=2150.651mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1A-16(86.516mm,24.068mm) on Top Copper And Pad U1A-17(85.831mm,23.383mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2128.381mil|Location2.Y=2133.131mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2128.381mil|Location2.Y=2133.131mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-17(85.831mm,23.383mm) on Top Copper And Pad U1A-18(85.831mm,22.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2108.696mil|Location2.Y=2113.446mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2108.696mil|Location2.Y=2113.446mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-18(85.831mm,22.883mm) on Top Copper And Pad U1A-19(85.831mm,22.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2089.011mil|Location2.Y=2093.761mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2089.011mil|Location2.Y=2093.761mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-19(85.831mm,22.383mm) on Top Copper And Pad U1A-20(85.831mm,21.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2029.956mil|Location2.Y=2034.706mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2029.956mil|Location2.Y=2034.706mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-2(90.701mm,20.383mm) on Top Copper And Pad U1A-3(90.701mm,20.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2069.326mil|Location2.Y=2074.076mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2069.326mil|Location2.Y=2074.076mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-20(85.831mm,21.883mm) on Top Copper And Pad U1A-21(85.831mm,21.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2049.641mil|Location2.Y=2054.391mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2049.641mil|Location2.Y=2054.391mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-21(85.831mm,21.383mm) on Top Copper And Pad U1A-22(85.831mm,20.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2029.956mil|Location2.Y=2034.706mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2029.956mil|Location2.Y=2034.706mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-22(85.831mm,20.883mm) on Top Copper And Pad U1A-23(85.831mm,20.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2010.271mil|Location2.Y=2015.021mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4223.425mil|Location2.X=4228.175mil|Location1.Y=2010.271mil|Location2.Y=2015.021mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-23(85.831mm,20.383mm) on Top Copper And Pad U1A-24(85.831mm,19.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.102mil|Location2.X=4238.529mil|Location1.Y=1992.751mil|Location2.Y=2000.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4231.102mil|Location2.X=4238.529mil|Location1.Y=1992.751mil|Location2.Y=2000.248mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1A-24(85.831mm,19.883mm) on Top Copper And Pad U1A-25(86.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4248.622mil|Location2.X=4253.372mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4248.622mil|Location2.X=4253.372mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-25(86.516mm,19.198mm) on Top Copper And Pad U1A-26(87.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4268.307mil|Location2.X=4273.057mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4268.307mil|Location2.X=4273.057mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-26(87.016mm,19.198mm) on Top Copper And Pad U1A-27(87.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.992mil|Location2.X=4292.742mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.992mil|Location2.X=4292.742mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-27(87.516mm,19.198mm) on Top Copper And Pad U1A-28(88.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.677mil|Location2.X=4312.427mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.677mil|Location2.X=4312.427mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-28(88.016mm,19.198mm) on Top Copper And Pad U1A-29(88.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4327.362mil|Location2.X=4332.112mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4327.362mil|Location2.X=4332.112mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-29(88.516mm,19.198mm) on Top Copper And Pad U1A-30(89.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2049.641mil|Location2.Y=2054.391mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2049.641mil|Location2.Y=2054.391mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-3(90.701mm,20.883mm) on Top Copper And Pad U1A-4(90.701mm,21.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4347.047mil|Location2.X=4351.797mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4347.047mil|Location2.X=4351.797mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-30(89.016mm,19.198mm) on Top Copper And Pad U1A-31(89.516mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366.732mil|Location2.X=4371.482mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366.732mil|Location2.X=4371.482mil|Location1.Y=1961.845mil|Location2.Y=1966.595mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-31(89.516mm,19.198mm) on Top Copper And Pad U1A-32(90.016mm,19.198mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2069.326mil|Location2.Y=2074.076mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2069.326mil|Location2.Y=2074.076mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-4(90.701mm,21.383mm) on Top Copper And Pad U1A-5(90.701mm,21.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2089.011mil|Location2.Y=2093.761mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2089.011mil|Location2.Y=2093.761mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-5(90.701mm,21.883mm) on Top Copper And Pad U1A-6(90.701mm,22.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2108.696mil|Location2.Y=2113.446mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2108.696mil|Location2.Y=2113.446mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-6(90.701mm,22.383mm) on Top Copper And Pad U1A-7(90.701mm,22.883mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2128.381mil|Location2.Y=2133.131mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4415.158mil|Location2.X=4419.908mil|Location1.Y=2128.381mil|Location2.Y=2133.131mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1A-7(90.701mm,22.883mm) on Top Copper And Pad U1A-8(90.701mm,23.383mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.252mil|Location2.X=4391.679mil|Location1.Y=2145.901mil|Location2.Y=2153.398mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.252mil|Location2.X=4391.679mil|Location1.Y=2145.901mil|Location2.Y=2153.398mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1A-8(90.701mm,23.383mm) on Top Copper And Pad U1A-9(90.016mm,24.068mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3105.491mil|Location2.Y=3110.241mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3105.491mil|Location2.Y=3110.241mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-1(90.683mm,47.702mm) on Top Copper And Pad U1B-2(90.683mm,48.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4383.52mil|Location2.X=4391.017mil|Location1.Y=3085.295mil|Location2.Y=3092.722mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4383.52mil|Location2.X=4391.017mil|Location1.Y=3085.295mil|Location2.Y=3092.722mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1B-1(90.683mm,47.702mm) on Top Copper And Pad U1B-32(89.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4346.315mil|Location2.X=4351.065mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4346.315mil|Location2.X=4351.065mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-10(89.498mm,51.887mm) on Top Copper And Pad U1B-11(88.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366mil|Location2.X=4370.75mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366mil|Location2.X=4370.75mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-10(89.498mm,51.887mm) on Top Copper And Pad U1B-9(89.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4326.63mil|Location2.X=4331.38mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4326.63mil|Location2.X=4331.38mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-11(88.998mm,51.887mm) on Top Copper And Pad U1B-12(88.498mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4306.945mil|Location2.X=4311.695mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4306.945mil|Location2.X=4311.695mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-12(88.498mm,51.887mm) on Top Copper And Pad U1B-13(87.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.26mil|Location2.X=4292.01mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.26mil|Location2.X=4292.01mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-13(87.998mm,51.887mm) on Top Copper And Pad U1B-14(87.498mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4267.575mil|Location2.X=4272.325mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4267.575mil|Location2.X=4272.325mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-14(87.498mm,51.887mm) on Top Copper And Pad U1B-15(86.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4247.89mil|Location2.X=4252.64mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4247.89mil|Location2.X=4252.64mil|Location1.Y=3248.798mil|Location2.Y=3253.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-15(86.998mm,51.887mm) on Top Copper And Pad U1B-16(86.498mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4230.37mil|Location2.X=4237.867mil|Location1.Y=3238.445mil|Location2.Y=3245.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4230.37mil|Location2.X=4237.867mil|Location1.Y=3238.445mil|Location2.Y=3245.871mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1B-16(86.498mm,51.887mm) on Top Copper And Pad U1B-17(85.813mm,51.202mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3223.601mil|Location2.Y=3228.351mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3223.601mil|Location2.Y=3228.351mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-17(85.813mm,51.202mm) on Top Copper And Pad U1B-18(85.813mm,50.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3203.916mil|Location2.Y=3208.666mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3203.916mil|Location2.Y=3208.666mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-18(85.813mm,50.702mm) on Top Copper And Pad U1B-19(85.813mm,50.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3184.231mil|Location2.Y=3188.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3184.231mil|Location2.Y=3188.981mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-19(85.813mm,50.202mm) on Top Copper And Pad U1B-20(85.813mm,49.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3125.176mil|Location2.Y=3129.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3125.176mil|Location2.Y=3129.926mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-2(90.683mm,48.202mm) on Top Copper And Pad U1B-3(90.683mm,48.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3164.546mil|Location2.Y=3169.296mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3164.546mil|Location2.Y=3169.296mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-20(85.813mm,49.702mm) on Top Copper And Pad U1B-21(85.813mm,49.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3144.861mil|Location2.Y=3149.611mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3144.861mil|Location2.Y=3149.611mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-21(85.813mm,49.202mm) on Top Copper And Pad U1B-22(85.813mm,48.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3125.176mil|Location2.Y=3129.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3125.176mil|Location2.Y=3129.926mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-22(85.813mm,48.702mm) on Top Copper And Pad U1B-23(85.813mm,48.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3105.491mil|Location2.Y=3110.241mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4222.693mil|Location2.X=4227.443mil|Location1.Y=3105.491mil|Location2.Y=3110.241mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-23(85.813mm,48.202mm) on Top Copper And Pad U1B-24(85.813mm,47.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4230.37mil|Location2.X=4237.797mil|Location1.Y=3087.972mil|Location2.Y=3095.469mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4230.37mil|Location2.X=4237.797mil|Location1.Y=3087.972mil|Location2.Y=3095.469mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1B-24(85.813mm,47.702mm) on Top Copper And Pad U1B-25(86.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4247.89mil|Location2.X=4252.64mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4247.89mil|Location2.X=4252.64mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-25(86.498mm,47.017mm) on Top Copper And Pad U1B-26(86.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4267.575mil|Location2.X=4272.325mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4267.575mil|Location2.X=4272.325mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-26(86.998mm,47.017mm) on Top Copper And Pad U1B-27(87.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.26mil|Location2.X=4292.01mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.26mil|Location2.X=4292.01mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-27(87.498mm,47.017mm) on Top Copper And Pad U1B-28(87.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4306.945mil|Location2.X=4311.695mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4306.945mil|Location2.X=4311.695mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-28(87.998mm,47.017mm) on Top Copper And Pad U1B-29(88.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4326.63mil|Location2.X=4331.38mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4326.63mil|Location2.X=4331.38mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-29(88.498mm,47.017mm) on Top Copper And Pad U1B-30(88.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3144.861mil|Location2.Y=3149.611mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3144.861mil|Location2.Y=3149.611mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-3(90.683mm,48.702mm) on Top Copper And Pad U1B-4(90.683mm,49.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4346.315mil|Location2.X=4351.065mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4346.315mil|Location2.X=4351.065mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-30(88.998mm,47.017mm) on Top Copper And Pad U1B-31(89.498mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366mil|Location2.X=4370.75mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4366mil|Location2.X=4370.75mil|Location1.Y=3057.066mil|Location2.Y=3061.816mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-31(89.498mm,47.017mm) on Top Copper And Pad U1B-32(89.998mm,47.017mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3164.546mil|Location2.Y=3169.296mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3164.546mil|Location2.Y=3169.296mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-4(90.683mm,49.202mm) on Top Copper And Pad U1B-5(90.683mm,49.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3184.231mil|Location2.Y=3188.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3184.231mil|Location2.Y=3188.981mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-5(90.683mm,49.702mm) on Top Copper And Pad U1B-6(90.683mm,50.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3203.916mil|Location2.Y=3208.666mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3203.916mil|Location2.Y=3208.666mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-6(90.683mm,50.202mm) on Top Copper And Pad U1B-7(90.683mm,50.702mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3223.601mil|Location2.Y=3228.351mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4414.425mil|Location2.X=4419.175mil|Location1.Y=3223.601mil|Location2.Y=3228.351mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1B-7(90.683mm,50.702mm) on Top Copper And Pad U1B-8(90.683mm,51.202mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4383.52mil|Location2.X=4390.946mil|Location1.Y=3241.121mil|Location2.Y=3248.618mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4383.52mil|Location2.X=4390.946mil|Location1.Y=3241.121mil|Location2.Y=3248.618mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1B-8(90.683mm,51.202mm) on Top Copper And Pad U1B-9(89.998mm,51.887mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4188.688mil|Location2.Y=4193.438mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4188.688mil|Location2.Y=4193.438mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-1(90.785mm,75.215mm) on Top Copper And Pad U1C-2(90.785mm,75.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4387.546mil|Location2.X=4395.043mil|Location1.Y=4168.492mil|Location2.Y=4175.918mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4387.546mil|Location2.X=4395.043mil|Location1.Y=4168.492mil|Location2.Y=4175.918mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1C-1(90.785mm,75.215mm) on Top Copper And Pad U1C-32(90.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4350.342mil|Location2.X=4355.092mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4350.342mil|Location2.X=4355.092mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-10(89.6mm,79.4mm) on Top Copper And Pad U1C-11(89.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4370.027mil|Location2.X=4374.777mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4370.027mil|Location2.X=4374.777mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-10(89.6mm,79.4mm) on Top Copper And Pad U1C-9(90.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4330.657mil|Location2.X=4335.407mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4330.657mil|Location2.X=4335.407mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-11(89.1mm,79.4mm) on Top Copper And Pad U1C-12(88.6mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.971mil|Location2.X=4315.721mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.971mil|Location2.X=4315.721mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-12(88.6mm,79.4mm) on Top Copper And Pad U1C-13(88.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4291.287mil|Location2.X=4296.037mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4291.287mil|Location2.X=4296.037mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-13(88.1mm,79.4mm) on Top Copper And Pad U1C-14(87.6mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.601mil|Location2.X=4276.351mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.601mil|Location2.X=4276.351mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-14(87.6mm,79.4mm) on Top Copper And Pad U1C-15(87.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4251.916mil|Location2.X=4256.666mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4251.916mil|Location2.X=4256.666mil|Location1.Y=4331.995mil|Location2.Y=4336.745mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-15(87.1mm,79.4mm) on Top Copper And Pad U1C-16(86.6mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4234.397mil|Location2.X=4241.894mil|Location1.Y=4321.641mil|Location2.Y=4329.068mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4234.397mil|Location2.X=4241.894mil|Location1.Y=4321.641mil|Location2.Y=4329.068mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1C-16(86.6mm,79.4mm) on Top Copper And Pad U1C-17(85.915mm,78.715mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4306.798mil|Location2.Y=4311.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4306.798mil|Location2.Y=4311.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-17(85.915mm,78.715mm) on Top Copper And Pad U1C-18(85.915mm,78.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4287.113mil|Location2.Y=4291.863mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4287.113mil|Location2.Y=4291.863mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-18(85.915mm,78.215mm) on Top Copper And Pad U1C-19(85.915mm,77.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4267.428mil|Location2.Y=4272.178mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4267.428mil|Location2.Y=4272.178mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-19(85.915mm,77.715mm) on Top Copper And Pad U1C-20(85.915mm,77.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4208.373mil|Location2.Y=4213.123mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4208.373mil|Location2.Y=4213.123mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-2(90.785mm,75.715mm) on Top Copper And Pad U1C-3(90.785mm,76.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4247.743mil|Location2.Y=4252.493mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4247.743mil|Location2.Y=4252.493mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-20(85.915mm,77.215mm) on Top Copper And Pad U1C-21(85.915mm,76.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4228.058mil|Location2.Y=4232.808mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4228.058mil|Location2.Y=4232.808mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-21(85.915mm,76.715mm) on Top Copper And Pad U1C-22(85.915mm,76.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4208.373mil|Location2.Y=4213.123mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4208.373mil|Location2.Y=4213.123mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-22(85.915mm,76.215mm) on Top Copper And Pad U1C-23(85.915mm,75.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4188.688mil|Location2.Y=4193.438mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4226.72mil|Location2.X=4231.47mil|Location1.Y=4188.688mil|Location2.Y=4193.438mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-23(85.915mm,75.715mm) on Top Copper And Pad U1C-24(85.915mm,75.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4234.397mil|Location2.X=4241.823mil|Location1.Y=4171.168mil|Location2.Y=4178.666mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4234.397mil|Location2.X=4241.823mil|Location1.Y=4171.168mil|Location2.Y=4178.666mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1C-24(85.915mm,75.215mm) on Top Copper And Pad U1C-25(86.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4251.916mil|Location2.X=4256.666mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4251.916mil|Location2.X=4256.666mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-25(86.6mm,74.53mm) on Top Copper And Pad U1C-26(87.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.601mil|Location2.X=4276.351mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4271.601mil|Location2.X=4276.351mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-26(87.1mm,74.53mm) on Top Copper And Pad U1C-27(87.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4291.287mil|Location2.X=4296.037mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4291.287mil|Location2.X=4296.037mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-27(87.6mm,74.53mm) on Top Copper And Pad U1C-28(88.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.971mil|Location2.X=4315.721mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.971mil|Location2.X=4315.721mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-28(88.1mm,74.53mm) on Top Copper And Pad U1C-29(88.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4330.657mil|Location2.X=4335.407mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4330.657mil|Location2.X=4335.407mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-29(88.6mm,74.53mm) on Top Copper And Pad U1C-30(89.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4228.058mil|Location2.Y=4232.808mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4228.058mil|Location2.Y=4232.808mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-3(90.785mm,76.215mm) on Top Copper And Pad U1C-4(90.785mm,76.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4350.342mil|Location2.X=4355.092mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4350.342mil|Location2.X=4355.092mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-30(89.1mm,74.53mm) on Top Copper And Pad U1C-31(89.6mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4370.027mil|Location2.X=4374.777mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4370.027mil|Location2.X=4374.777mil|Location1.Y=4140.263mil|Location2.Y=4145.013mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-31(89.6mm,74.53mm) on Top Copper And Pad U1C-32(90.1mm,74.53mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4247.743mil|Location2.Y=4252.493mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4247.743mil|Location2.Y=4252.493mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-4(90.785mm,76.715mm) on Top Copper And Pad U1C-5(90.785mm,77.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4267.428mil|Location2.Y=4272.178mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4267.428mil|Location2.Y=4272.178mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-5(90.785mm,77.215mm) on Top Copper And Pad U1C-6(90.785mm,77.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4287.113mil|Location2.Y=4291.863mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4287.113mil|Location2.Y=4291.863mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-6(90.785mm,77.715mm) on Top Copper And Pad U1C-7(90.785mm,78.215mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4306.798mil|Location2.Y=4311.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4418.452mil|Location2.X=4423.202mil|Location1.Y=4306.798mil|Location2.Y=4311.548mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.027mm &lt; 0.089mm) Between Pad U1C-7(90.785mm,78.215mm) on Top Copper And Pad U1C-8(90.785mm,78.715mm) on Top Copper [Top Mask] Mask Sliver [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4387.546mil|Location2.X=4394.973mil|Location1.Y=4324.318mil|Location2.Y=4331.815mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4387.546mil|Location2.X=4394.973mil|Location1.Y=4324.318mil|Location2.Y=4331.815mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.078mm &lt; 0.089mm) Between Pad U1C-8(90.785mm,78.715mm) on Top Copper And Pad U1C-9(90.1mm,79.4mm) on Top Copper [Top Mask] Mask Sliver [0.078mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNUFQ5FUDYFYPC2DP5UPHTAKM0NEUFGWCBACGKCGJVBWDP0DFKDI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Matched Lengths(Tolerance=0.254mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=1551.63mil|Location2.Y=1712.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=1551.63mil|Location2.Y=1712.631mil|Absolute=True">Matched Net Lengths: Between Net AIN_N1 And Net AIN_P1 Actual Difference against AIN_P1 is: 1.539mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=2791.787mil|Location2.Y=3021.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=2791.787mil|Location2.Y=3021.231mil|Absolute=True">Matched Net Lengths: Between Net AIN_N10 And Net AIN_P10 Actual Difference against AIN_P10 is: 4.103mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2854.176mil|Location2.Y=3037.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2854.176mil|Location2.Y=3037.976mil|Absolute=True">Matched Net Lengths: Between Net AIN_N11 And Net AIN_P11 Actual Difference against AIN_P11 is: 0.651mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3004.176mil|Location2.Y=3175.772mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3004.176mil|Location2.Y=3175.772mil|Absolute=True">Matched Net Lengths: Between Net AIN_N12 And Net AIN_P12 Actual Difference against AIN_P12 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3205.173mil|Location2.Y=3375.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3205.173mil|Location2.Y=3375.531mil|Absolute=True">Matched Net Lengths: Between Net AIN_N13 And Net AIN_P13 Actual Difference against AIN_P13 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=3342.968mil|Location2.Y=3575.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=3342.968mil|Location2.Y=3575.531mil|Absolute=True">Matched Net Lengths: Between Net AIN_N14 And Net AIN_P14 Actual Difference against AIN_P14 is: 4.103mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3408.476mil|Location2.Y=3589.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3408.476mil|Location2.Y=3589.157mil|Absolute=True">Matched Net Lengths: Between Net AIN_N15 And Net AIN_P15 Actual Difference against AIN_P15 is: 0.651mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3558.476mil|Location2.Y=3726.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3558.476mil|Location2.Y=3726.953mil|Absolute=True">Matched Net Lengths: Between Net AIN_N16 And Net AIN_P16 Actual Difference against AIN_P16 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3756.354mil|Location2.Y=3929.931mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3756.354mil|Location2.Y=3929.931mil|Absolute=True">Matched Net Lengths: Between Net AIN_N17 And Net AIN_P17 Actual Difference against AIN_P17 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=3894.149mil|Location2.Y=4129.931mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=3894.149mil|Location2.Y=4129.931mil|Absolute=True">Matched Net Lengths: Between Net AIN_N18 And Net AIN_P18 Actual Difference against AIN_P18 is: 4.111mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3962.876mil|Location2.Y=4140.339mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=3962.876mil|Location2.Y=4140.339mil|Absolute=True">Matched Net Lengths: Between Net AIN_N19 And Net AIN_P19 Actual Difference against AIN_P19 is: 0.651mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=1689.425mil|Location2.Y=1912.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=1689.425mil|Location2.Y=1912.631mil|Absolute=True">Matched Net Lengths: Between Net AIN_N2 And Net AIN_P2 Actual Difference against AIN_P2 is: 4.103mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4112.876mil|Location2.Y=4278.134mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4112.876mil|Location2.Y=4278.134mil|Absolute=True">Matched Net Lengths: Between Net AIN_N20 And Net AIN_P20 Actual Difference against AIN_P20 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4307.535mil|Location2.Y=4484.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4307.535mil|Location2.Y=4484.231mil|Absolute=True">Matched Net Lengths: Between Net AIN_N21 And Net AIN_P21 Actual Difference against AIN_P21 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=4445.331mil|Location2.Y=4684.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=4445.331mil|Location2.Y=4684.231mil|Absolute=True">Matched Net Lengths: Between Net AIN_N22 And Net AIN_P22 Actual Difference against AIN_P22 is: 4.103mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4517.176mil|Location2.Y=4691.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4517.176mil|Location2.Y=4691.52mil|Absolute=True">Matched Net Lengths: Between Net AIN_N23 And Net AIN_P23 Actual Difference against AIN_P23 is: 0.651mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4667.176mil|Location2.Y=4829.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=4667.176mil|Location2.Y=4829.315mil|Absolute=True">Matched Net Lengths: Between Net AIN_N24 And Net AIN_P24 Actual Difference against AIN_P24 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=1745.576mil|Location2.Y=1935.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=1745.576mil|Location2.Y=1935.614mil|Absolute=True">Matched Net Lengths: Between Net AIN_N3 And Net AIN_P3 Actual Difference against AIN_P3 is: 0.683mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=1895.576mil|Location2.Y=2073.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=1895.576mil|Location2.Y=2073.41mil|Absolute=True">Matched Net Lengths: Between Net AIN_N4 And Net AIN_P4 Actual Difference against AIN_P4 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2102.811mil|Location2.Y=2266.931mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2102.811mil|Location2.Y=2266.931mil|Absolute=True">Matched Net Lengths: Between Net AIN_N5 And Net AIN_P5 Actual Difference against AIN_P5 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=2240.606mil|Location2.Y=2466.931mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5878.701mil|Location1.Y=2240.606mil|Location2.Y=2466.931mil|Absolute=True">Matched Net Lengths: Between Net AIN_N6 And Net AIN_P6 Actual Difference against AIN_P6 is: 4.103mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2299.876mil|Location2.Y=2486.795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2299.876mil|Location2.Y=2486.795mil|Absolute=True">Matched Net Lengths: Between Net AIN_N7 And Net AIN_P7 Actual Difference against AIN_P7 is: 0.651mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2449.876mil|Location2.Y=2624.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2449.876mil|Location2.Y=2624.591mil|Absolute=True">Matched Net Lengths: Between Net AIN_N8 And Net AIN_P8 Actual Difference against AIN_P8 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2653.992mil|Location2.Y=2821.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5107.575mil|Location2.X=5866.953mil|Location1.Y=2653.992mil|Location2.Y=2821.231mil|Absolute=True">Matched Net Lengths: Between Net AIN_N9 And Net AIN_P9 Actual Difference against AIN_P9 is: 1.516mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.58mil|Location2.X=4983.685mil|Location1.Y=1550.646mil|Location2.Y=1996.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4310.58mil|Location2.X=4983.685mil|Location1.Y=1550.646mil|Location2.Y=1996.764mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N1 And Net AIN_SCALED_P1 Actual Difference against AIN_SCALED_P1 is: 0.994mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.218mil|Location2.X=4983.685mil|Location1.Y=2790.803mil|Location2.Y=3091.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.218mil|Location2.X=4983.685mil|Location1.Y=2790.803mil|Location2.Y=3091.984mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N10 And Net AIN_SCALED_P10 Actual Difference against AIN_SCALED_P10 is: 0.999mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.257mil|Location2.X=4983.685mil|Location1.Y=3167.449mil|Location2.Y=3314.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.257mil|Location2.X=4983.685mil|Location1.Y=3167.449mil|Location2.Y=3314.551mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N13 And Net AIN_SCALED_P13 Actual Difference against AIN_SCALED_P13 is: 0.254mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.218mil|Location2.X=4983.685mil|Location1.Y=3241.858mil|Location2.Y=3590.141mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.218mil|Location2.X=4983.685mil|Location1.Y=3241.858mil|Location2.Y=3590.141mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N15 And Net AIN_SCALED_P15 Actual Difference against AIN_SCALED_P15 is: 0.337mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.8mil|Location2.X=4983.685mil|Location1.Y=3241.858mil|Location2.Y=3727.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.8mil|Location2.X=4983.685mil|Location1.Y=3241.858mil|Location2.Y=3727.937mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N16 And Net AIN_SCALED_P16 Actual Difference against AIN_SCALED_P16 is: 1.45mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4313.874mil|Location2.X=4983.685mil|Location1.Y=3755.37mil|Location2.Y=4175.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4313.874mil|Location2.X=4983.685mil|Location1.Y=3755.37mil|Location2.Y=4175.181mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N17 And Net AIN_SCALED_P17 Actual Difference against AIN_SCALED_P17 is: 0.994mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4353.244mil|Location2.X=4983.685mil|Location1.Y=3893.165mil|Location2.Y=4175.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4353.244mil|Location2.X=4983.685mil|Location1.Y=3893.165mil|Location2.Y=4175.181mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N18 And Net AIN_SCALED_P18 Actual Difference against AIN_SCALED_P18 is: 0.994mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.95mil|Location2.X=4983.685mil|Location1.Y=1688.441mil|Location2.Y=1996.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.95mil|Location2.X=4983.685mil|Location1.Y=1688.441mil|Location2.Y=1996.764mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N2 And Net AIN_SCALED_P2 Actual Difference against AIN_SCALED_P2 is: 0.994mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4353.244mil|Location2.X=4983.685mil|Location1.Y=4325.055mil|Location2.Y=4692.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4353.244mil|Location2.X=4983.685mil|Location1.Y=4325.055mil|Location2.Y=4692.504mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N23 And Net AIN_SCALED_P23 Actual Difference against AIN_SCALED_P23 is: 0.53mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.737mil|Location2.X=4983.685mil|Location1.Y=4325.055mil|Location2.Y=4830.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.737mil|Location2.X=4983.685mil|Location1.Y=4325.055mil|Location2.Y=4830.299mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N24 And Net AIN_SCALED_P24 Actual Difference against AIN_SCALED_P24 is: 1.687mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.989mil|Location2.X=4983.685mil|Location1.Y=1964.031mil|Location2.Y=2074.393mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4384.989mil|Location2.X=4983.685mil|Location1.Y=1964.031mil|Location2.Y=2074.393mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N4 And Net AIN_SCALED_P4 Actual Difference against AIN_SCALED_P4 is: 0.487mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.95mil|Location2.X=4983.685mil|Location1.Y=2146.638mil|Location2.Y=2487.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4349.95mil|Location2.X=4983.685mil|Location1.Y=2146.638mil|Location2.Y=2487.779mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N7 And Net AIN_SCALED_P7 Actual Difference against AIN_SCALED_P7 is: 0.455mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.8mil|Location2.X=4983.685mil|Location1.Y=2146.638mil|Location2.Y=2625.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4207.8mil|Location2.X=4983.685mil|Location1.Y=2146.638mil|Location2.Y=2625.575mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N8 And Net AIN_SCALED_P8 Actual Difference against AIN_SCALED_P8 is: 1.208mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4309.847mil|Location2.X=4983.685mil|Location1.Y=2653.008mil|Location2.Y=3091.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4309.847mil|Location2.X=4983.685mil|Location1.Y=2653.008mil|Location2.Y=3091.984mil|Absolute=True">Matched Net Lengths: Between Net AIN_SCALED_N9 And Net AIN_SCALED_P9 Actual Difference against AIN_SCALED_P9 is: 0.994mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3202.125mil|Location2.X=4331.126mil|Location1.Y=2146.638mil|Location2.Y=2580.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3202.125mil|Location2.X=4331.126mil|Location1.Y=2146.638mil|Location2.Y=2580.299mil|Absolute=True">Matched Net Lengths: Between Net IN_FILTA_N And Net IN_FILTA_P Actual Difference against IN_FILTA_P is: 2.304mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3201.948mil|Location2.X=4331.126mil|Location1.Y=3241.858mil|Location2.Y=3672.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3201.948mil|Location2.X=4331.126mil|Location1.Y=3241.858mil|Location2.Y=3672.819mil|Absolute=True">Matched Net Lengths: Between Net IN_FILTB_N And Net IN_FILTB_P Actual Difference against IN_FILTB_P is: 2.404mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3205.827mil|Location2.X=4331.126mil|Location1.Y=4325.055mil|Location2.Y=4757.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\ga92wum\git\UltraZohm\PCB\uz_a_max11331\UZ_A_MAX11331.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3205.827mil|Location2.X=4331.126mil|Location1.Y=4325.055mil|Location2.Y=4757.465mil|Absolute=True">Matched Net Lengths: Between Net IN_FILTC_N And Net IN_FILTC_P Actual Difference against IN_FILTC_P is: 3.251mm, Tolerance : 0.254mm. </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
