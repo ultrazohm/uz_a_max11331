@@ -43,7 +43,6 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
-CurrentVariant=Differential_Input
 
 [Preferences]
 PrefsVaultGUID=
@@ -367,6 +366,10 @@ DItemRevisionGUID=
 
 [GeneratedDocument2]
 DocumentPath=Project Outputs for UZ_A_MAX11331\Design Rule Check - UZ_A_MAX11331.html
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for UZ_A_MAX11331\Pick Place\PickPlace_UZ_A_MAX11331_Rev01.csv
 DItemRevisionGUID=
 
 [Parameter1]
