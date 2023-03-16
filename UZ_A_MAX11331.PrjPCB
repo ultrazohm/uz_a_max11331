@@ -37,12 +37,13 @@ OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
-CrossRefSheetStyle=1
-CrossRefLocationStyle=1
+CrossRefSheetStyle=0
+CrossRefLocationStyle=0
 CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
+CurrentVariant=Differential_Input
 
 [Preferences]
 PrefsVaultGUID=
@@ -308,7 +309,7 @@ UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=23
+VariationCount=29
 Variation1=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\DPMBDSKF|Kind=1|AlternatePart= 
 Variation2=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\VPIXJELC|Kind=1|AlternatePart= 
 Variation3=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\DPMBDSKF|Kind=1|AlternatePart= 
@@ -332,6 +333,12 @@ Variation20=Designator=H3|UniqueId=\ISMUJODD\RAACXHSL|Kind=1|AlternatePart=
 Variation21=Designator=H2|UniqueId=\ISMUJODD\USUDKHHU|Kind=1|AlternatePart= 
 Variation22=Designator=H4|UniqueId=\ISMUJODD\FCBXLAMK|Kind=1|AlternatePart= 
 Variation23=Designator=X4|UniqueId=\TANNTLZD\BVFZIKLN|Kind=1|AlternatePart= 
+Variation24=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\PAYCTAEC|Kind=1|AlternatePart= 
+Variation25=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\SIQNWLFM|Kind=1|AlternatePart= 
+Variation26=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\PAYCTAEC|Kind=1|AlternatePart= 
+Variation27=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\SIQNWLFM|Kind=1|AlternatePart= 
+Variation28=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\PAYCTAEC|Kind=1|AlternatePart= 
+Variation29=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\SIQNWLFM|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -339,7 +346,7 @@ UniqueID=0A166520-C4FA-4CF0-A1A4-2F24D2B0FEC4
 Description=SingleEnded_Input
 AllowFabrication=0
 ParameterCount=0
-VariationCount=18
+VariationCount=24
 Variation1=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\VPIXJELC|Kind=1|AlternatePart= 
 Variation2=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\DPMBDSKF|Kind=1|AlternatePart= 
 Variation3=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\VPIXJELC|Kind=1|AlternatePart= 
@@ -358,6 +365,12 @@ Variation15=Designator=H3|UniqueId=\ISMUJODD\RAACXHSL|Kind=1|AlternatePart=
 Variation16=Designator=H2|UniqueId=\ISMUJODD\USUDKHHU|Kind=1|AlternatePart= 
 Variation17=Designator=H4|UniqueId=\ISMUJODD\FCBXLAMK|Kind=1|AlternatePart= 
 Variation18=Designator=X4|UniqueId=\TANNTLZD\BVFZIKLN|Kind=1|AlternatePart= 
+Variation19=Designator=R7A|UniqueId=\XFOIWBPK\BSQHFYOB\PAYCTAEC|Kind=1|AlternatePart= 
+Variation20=Designator=R8A|UniqueId=\XFOIWBPK\BSQHFYOB\SIQNWLFM|Kind=1|AlternatePart= 
+Variation21=Designator=R7B|UniqueId=\XFOIWBPK\XGTLZUWU\PAYCTAEC|Kind=1|AlternatePart= 
+Variation22=Designator=R8B|UniqueId=\XFOIWBPK\XGTLZUWU\SIQNWLFM|Kind=1|AlternatePart= 
+Variation23=Designator=R7C|UniqueId=\XFOIWBPK\DQKASHWX\PAYCTAEC|Kind=1|AlternatePart= 
+Variation24=Designator=R8C|UniqueId=\XFOIWBPK\DQKASHWX\SIQNWLFM|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
@@ -366,10 +379,6 @@ DItemRevisionGUID=
 
 [GeneratedDocument2]
 DocumentPath=Project Outputs for UZ_A_MAX11331\Design Rule Check - UZ_A_MAX11331.html
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Project Outputs for UZ_A_MAX11331\Pick Place\PickPlace_UZ_A_MAX11331_Rev01.csv
 DItemRevisionGUID=
 
 [Parameter1]
