@@ -187,7 +187,7 @@ GenerateClassCluster=0
 DocumentUniqueId=TEIMVYAK
 
 [Document9]
-DocumentPath=Analog_Input_Signal_Conditioning.SchDoc
+DocumentPath=Analog_Frontend_OpAmp.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -400,28 +400,28 @@ DocumentPath=Project Outputs for UZ_A_MAX11331\Design Rule Check - UZ_A_MAX11331
 DItemRevisionGUID=
 
 [Parameter1]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev02
 
 [Parameter2]
-Name=AuthorParam
-Value=Andreas Geiger
-
-[Parameter3]
-Name=Date
-Value=11/2022
-
-[Parameter4]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter5]
 Name=ProjectNameCustom
 Value==ProjectName
 
+[Parameter3]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter4]
+Name=Date
+Value=11/2024
+
+[Parameter5]
+Name=AuthorParam
+Value=Andreas Geiger
+
 [Parameter6]
-Name=ProjectRevision
-Value=Rev01
+Name=Author
+Value=Andreas Geiger
 
 [Configuration1]
 Name=Sources
@@ -1012,6 +1012,36 @@ OutputName12=Web Review Data
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
+OutputType13=Ansoft Neutral
+OutputName13=Ansoft Neutral (AutoPCB)
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=HyperLynx
+OutputName14=HyperLynx (AutoPCB)
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=Orcad v7 Capture Design
+OutputName15=Orcad v7 Capture Design (AutoSCH)
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+OutputType16=P-CAD ASCII
+OutputName16=P-CAD ASCII (AutoPCB)
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+OutputType17=P-CAD V16 Schematic Design
+OutputName17=P-CAD V16 Schematic Design (AutoSCH)
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+OutputType18=SiSoft
+OutputName18=SiSoft (AutoPCB)
+OutputDocumentPath18=
+OutputVariantName18=
+OutputDefault18=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
