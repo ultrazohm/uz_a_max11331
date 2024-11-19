@@ -20,3 +20,8 @@ Project\ Logs*/
 **/*.ldb
 
 # End of https://www.gitignore.io/api/altium
+
+# LTspice
+*.raw
+*.plt
+*.log
