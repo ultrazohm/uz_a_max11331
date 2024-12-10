@@ -339,13 +339,30 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HWCJXQIV
 
+[Document18]
+DocumentPath=Power_Supply_3.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RZFENIPI
+
 [ProjectVariant1]
 UniqueID=FF01E240-E6AA-41E1-B011-F00E2D4A365B
 Description=Differential_Input
 AllowFabrication=0
 ParameterCount=0
 VariationCount=55
-Variation1=Designator=R3|UniqueId=\GRGVQCQP|Kind=1|AlternatePart= 
+Variation1=Designator=R3|UniqueId=\GRGVQCQP|Kind=0|AlternatePart= 
 Variation2=Designator=X2|UniqueId=\LLLSCVGB\YRKNKLAE|Kind=1|AlternatePart= 
 Variation3=Designator=H1|UniqueId=\ISMUJODD\IECYWNZG|Kind=1|AlternatePart= 
 Variation4=Designator=H3|UniqueId=\ISMUJODD\RAACXHSL|Kind=1|AlternatePart= 
@@ -411,28 +428,28 @@ DocumentPath=Project Outputs for UZ_A_MAX11331\Design Rule Check - UZ_A_MAX11331
 DItemRevisionGUID=
 
 [Parameter1]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev02
 
 [Parameter2]
-Name=AuthorParam
-Value=Andreas Geiger
-
-[Parameter3]
-Name=Date
-Value=11/2024
-
-[Parameter4]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter5]
 Name=ProjectNameCustom
 Value==ProjectName
 
+[Parameter3]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter4]
+Name=Date
+Value=11/2024
+
+[Parameter5]
+Name=AuthorParam
+Value=Andreas Geiger
+
 [Parameter6]
-Name=ProjectRevision
-Value=Rev02
+Name=Author
+Value=Andreas Geiger
 
 [Configuration1]
 Name=Sources
