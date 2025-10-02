@@ -265,7 +265,7 @@ AnnotateOrder=12
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
+ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
@@ -439,28 +439,28 @@ DocumentPath=Project Outputs for UZ_A_MAX11331\Rev02\DOC\UZ_A_MAX11331_3D_View_T
 DItemRevisionGUID=
 
 [Parameter1]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev03
 
 [Parameter2]
-Name=AuthorParam
-Value=Andreas Geiger
-
-[Parameter3]
-Name=Date
-Value=12/2024
-
-[Parameter4]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter5]
 Name=ProjectNameCustom
 Value==ProjectName
 
+[Parameter3]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter4]
+Name=Date
+Value=10/2025
+
+[Parameter5]
+Name=AuthorParam
+Value=Andreas Geiger
+
 [Parameter6]
-Name=ProjectRevision
-Value=Rev02
+Name=Author
+Value=Andreas Geiger
 
 [Configuration1]
 Name=Sources
@@ -1112,6 +1112,14 @@ Type148=1
 Type149=1
 Type150=1
 Type151=1
+Type152=1
+Type153=1
+Type154=1
+Type155=1
+Type156=1
+Type157=1
+Type158=1
+Type159=1
 
 [Difference Levels]
 Type1=1
@@ -1196,6 +1204,11 @@ Type79=1
 Type80=1
 Type81=1
 Type82=1
+Type83=1
+Type84=1
+Type85=1
+Type86=1
+Type87=1
 
 [Electrical Rules Check]
 Type1=1
@@ -1359,6 +1372,8 @@ Type158=0
 Type159=0
 Type160=0
 Type161=0
+Type162=1
+Type163=1
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
@@ -1368,8 +1383,8 @@ L4=NNENNNWEENNWNENWN
 L5=NNNNNNNNNNNNNNNNN
 L6=NNENNNNEENNWNENWN
 L7=NNEWNNWEENNWNENWN
-L8=NWEENEENEEENNEENN
-L9=NWEENEEEENEWNEEWW
+L8=NWEENEENNEENNEENN
+L9=NWEENEENENEWNEEWW
 L10=NWNNNNNENNEWNNEWN
 L11=NNENNNNEEENWNENWN
 L12=WWWWNWWNWWWNWWWNN
@@ -1518,9 +1533,9 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=user.DbLib/C_generic
-ComponentDesignItemID0=UZgen_C_0402_56pF_50V_X7R
-ComponentSymbolReference0=CAP-NP
+ComponentLibraryIdentifier0=user.DbLib/Misc
+ComponentDesignItemID0=NULL
+ComponentSymbolReference0=TP_1mm
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=1
@@ -1540,38 +1555,40 @@ ParameterName0=Comment
 ParameterUpdate0=1
 ParameterName1=Component Kind
 ParameterUpdate1=1
-ParameterName2=Created from
+ParameterName2=Component Type
 ParameterUpdate2=1
-ParameterName3=Created On
+ParameterName3=Created
 ParameterUpdate3=1
-ParameterName4=Description
+ParameterName4=Created from
 ParameterUpdate4=1
-ParameterName5=Device Package
+ParameterName5=Created On
 ParameterUpdate5=1
-ParameterName6=Last Updated
+ParameterName6=Description
 ParameterUpdate6=1
-ParameterName7=Library Reference
+ParameterName7=Last Updated
 ParameterUpdate7=1
-ParameterName8=Manufacturer
+ParameterName8=Library Reference
 ParameterUpdate8=1
-ParameterName9=Manufacturer Part Number
+ParameterName9=Live Cycle Status
 ParameterUpdate9=1
-ParameterName10=Mounting Type
+ParameterName10=Manufacturer
 ParameterUpdate10=1
-ParameterName11=PartID
+ParameterName11=Manufacturer Part Number
 ParameterUpdate11=1
-ParameterName12=Technology
+ParameterName12=PartID
 ParameterUpdate12=1
-ParameterName13=Tolerance
+ParameterName13=Supplier 1
 ParameterUpdate13=1
-ParameterName14=Value
+ParameterName14=Supplier Part Number 1
 ParameterUpdate14=1
-ParameterName15=Voltage
+ParameterName15=Type
 ParameterUpdate15=1
+ParameterName16=Value
+ParameterUpdate16=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=C_0402_TE
+ModelName0=TP_1mm
 ModelUpdate0=1
 
 [DatabaseUpdateOptions]
