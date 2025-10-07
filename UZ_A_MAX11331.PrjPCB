@@ -439,28 +439,28 @@ DocumentPath=Project Outputs for UZ_A_MAX11331\Rev02\DOC\UZ_A_MAX11331_3D_View_T
 DItemRevisionGUID=
 
 [Parameter1]
-Name=ProjectRevision
-Value=Rev03
+Name=Author
+Value=Andreas Geiger
 
 [Parameter2]
-Name=ProjectNameCustom
-Value==ProjectName
-
-[Parameter3]
-Name=ProjectName
-Value=UZ_A_MAX11331
-
-[Parameter4]
-Name=Date
-Value=10/2025
-
-[Parameter5]
 Name=AuthorParam
 Value=Andreas Geiger
 
+[Parameter3]
+Name=Date
+Value=10/2025
+
+[Parameter4]
+Name=ProjectName
+Value=UZ_A_MAX11331
+
+[Parameter5]
+Name=ProjectNameCustom
+Value==ProjectName
+
 [Parameter6]
-Name=Author
-Value=Andreas Geiger
+Name=ProjectRevision
+Value=Rev03
 
 [Configuration1]
 Name=Sources
@@ -1533,9 +1533,9 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=user.DbLib/Resistors - SMD
-ComponentDesignItemID0=1206W4F1004T5E
-ComponentSymbolReference0=Resistor
+ComponentLibraryIdentifier0=user.DbLib/R_generic
+ComponentDesignItemID0=UZgen_R_0402_680R
+ComponentSymbolReference0=RES
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=1
@@ -1555,50 +1555,34 @@ ParameterName0=Comment
 ParameterUpdate0=1
 ParameterName1=Component Kind
 ParameterUpdate1=1
-ParameterName2=Component Type
+ParameterName2=Created from
 ParameterUpdate2=1
-ParameterName3=ComponentLink1Description
+ParameterName3=Created On
 ParameterUpdate3=1
-ParameterName4=ComponentLink1URL
+ParameterName4=Description
 ParameterUpdate4=1
-ParameterName5=Created from
+ParameterName5=Device Package
 ParameterUpdate5=1
-ParameterName6=Created On
+ParameterName6=Last Updated
 ParameterUpdate6=1
-ParameterName7=Description
+ParameterName7=Library Reference
 ParameterUpdate7=1
-ParameterName8=Device Package
+ParameterName8=Manufacturer
 ParameterUpdate8=1
-ParameterName9=Last Updated
+ParameterName9=Manufacturer Part Number
 ParameterUpdate9=1
-ParameterName10=LCSC Part Number
+ParameterName10=Mounting Type
 ParameterUpdate10=1
-ParameterName11=Library Reference
+ParameterName11=PartID
 ParameterUpdate11=1
-ParameterName12=Live Cycle Status
+ParameterName12=Tolerance
 ParameterUpdate12=1
-ParameterName13=Manufacturer
+ParameterName13=Value
 ParameterUpdate13=1
-ParameterName14=Manufacturer Part Number
-ParameterUpdate14=1
-ParameterName15=Mounting Type
-ParameterUpdate15=1
-ParameterName16=PartID
-ParameterUpdate16=1
-ParameterName17=Supplier 1
-ParameterUpdate17=1
-ParameterName18=Supplier Part Number 1
-ParameterUpdate18=1
-ParameterName19=Tolerance
-ParameterUpdate19=1
-ParameterName20=Type
-ParameterUpdate20=1
-ParameterName21=Value
-ParameterUpdate21=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=RES 1206_3216
+ModelName0=R_0402_TE
 ModelUpdate0=1
 
 [DatabaseUpdateOptions]
