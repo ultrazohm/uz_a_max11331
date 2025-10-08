@@ -7,7 +7,7 @@
 # - Win 10: 5.1.19041.1682
 
 $pathPartDB = '..\altium_lib\UZgen\jlcpcb.csv'
-$BOMbase    = 'Project Outputs for UZ_A_MAX11331\Rev02\BOM\BOM_JLC-UZ_A_MAX11331(Differential_Input)'
+$BOMbase    = 'Project Outputs for UZ_A_MAX11331\Rev03\BOM\BOM_JLC-UZ_A_MAX11331(Differential_Input)'
 
 
 # File paths (internal)
