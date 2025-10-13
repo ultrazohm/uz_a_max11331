@@ -15,119 +15,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Paste
-      File : UZ_A_MAX11331.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D20
-    D22
-    D27
-    D35
-    D53
-    D54
-    D56
-    D57
-*************************************************************
-
-*************************************************************
-Generating : Bottom Mask
-      File : UZ_A_MAX11331.GBS
-
-    Adding Layer      : Bottom Mask
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D35
-    D54
-    D60
-    D62
-    D68
-    D93
-    D95
-    D96
-    D97
-    D98
-    D99
-    D100
-    D101
-    D102
-    D103
-*************************************************************
-
-*************************************************************
-Generating : Top Mask
-      File : UZ_A_MAX11331.GTS
-
-    Adding Layer      : Top Mask
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D35
-    D54
-    D58
-    D59
-    D60
-    D61
-    D62
-    D63
-    D64
-    D65
-    D66
-    D67
-    D68
-    D69
-    D70
-    D71
-    D72
-    D73
-    D74
-    D75
-    D76
-    D77
-    D78
-    D79
-    D80
-    D81
-    D82
-    D83
-    D84
-    D85
-    D86
-    D87
-    D88
-    D89
-    D90
-    D91
-    D92
-    D93
-    D94
-    D95
-    D96
-    D97
-    D98
-    D99
-    D100
-    D101
-    D102
-    D103
-*************************************************************
-
-*************************************************************
 Generating : Top Paste
       File : UZ_A_MAX11331.GTP
 
@@ -214,7 +101,7 @@ Used DCodes :
     D13
     D18
     D20
-    D22
+    D23
     D27
     D35
     D53
@@ -242,19 +129,6 @@ Generating : L05
 
 Used DCodes :
     D122
-    D123
-*************************************************************
-
-*************************************************************
-Generating : L04
-      File : UZ_A_MAX11331.G3
-
-    Adding Layer      : L04
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D123
 *************************************************************
 
@@ -363,6 +237,132 @@ Used DCodes :
     D121
     D122
     D123
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : UZ_A_MAX11331.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D23
+    D27
+    D35
+    D53
+    D54
+    D56
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Bottom Mask
+      File : UZ_A_MAX11331.GBS
+
+    Adding Layer      : Bottom Mask
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D54
+    D60
+    D63
+    D68
+    D93
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+*************************************************************
+
+*************************************************************
+Generating : Top Mask
+      File : UZ_A_MAX11331.GTS
+
+    Adding Layer      : Top Mask
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D54
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+*************************************************************
+
+*************************************************************
+Generating : L04
+      File : UZ_A_MAX11331.G3
+
+    Adding Layer      : L04
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D122
 *************************************************************
 
 *************************************************************

@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: UZ_A_MAX11331.PcbDoc   08.10.2025  09:33:34
+NCDrill File Report For: UZ_A_MAX11331.PcbDoc   13.10.2025  15:35:52
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,7 +8,7 @@ ASCII RoundHoles File : UZ_A_MAX11331.TXT
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
 T1      8mil (0.2mm)                                              Round             240       PTH        40.04inch (1016.97mm)
-T2      12mil (0.3mm)                                             Round             490       PTH        70.83inch (1798.97mm)
+T2      12mil (0.3mm)                                             Round             490       PTH        70.67inch (1795.04mm)
 T3      35mil (0.9mm)                                             Round             48        PTH        7.25inch (184.26mm)
 T4      40mil (1.016mm)                                           Round             2         PTH        0.10inch (2.54mm)
 T5      75mil (1.9mm)                                             Round             4         PTH        0.67inch (17.00mm)
@@ -17,4 +17,4 @@ T7      128mil (3.25mm)                                           Round         
 ----------------------------------------------------------------------------------------------------------------------------------
 Totals                                                                              791
 
-Total Processing Time (hh:mm:ss) : 00:00:00
+Total Processing Time (hh:mm:ss) : 00:00:01

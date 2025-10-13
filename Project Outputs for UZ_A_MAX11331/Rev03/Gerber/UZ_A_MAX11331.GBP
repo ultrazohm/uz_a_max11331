@@ -1,12 +1,12 @@
 G04*
-G04 #@! TF.GenerationSoftware,Altium Limited,Altium Designer,25.8.1 (18)*
+G04 #@! TF.GenerationSoftware,Altium Limited,Altium Designer,25.6.2 (33)*
 G04*
 G04 Layer_Color=128*
 %FSLAX25Y25*%
 %MOIN*%
 G70*
 G04*
-G04 #@! TF.SameCoordinates,7B8565F0-3EC2-410B-8CA8-4BD05896C451*
+G04 #@! TF.SameCoordinates,10163D42-10C9-4D92-95DA-64D600520AAF*
 G04*
 G04*
 G04 #@! TF.FilePolarity,Positive*
@@ -23,8 +23,8 @@ G04:AMPARAMS|DCode=20|XSize=16.14mil|YSize=21.26mil|CornerRadius=2.66mil|HoleSiz
 1,1,0.00533,-0.00541,-0.00797*
 %
 %ADD20ROUNDEDRECTD20*%
-G04:AMPARAMS|DCode=22|XSize=18.9mil|YSize=21.65mil|CornerRadius=3.12mil|HoleSize=0mil|Usage=FLASHONLY|Rotation=0.000|XOffset=0mil|YOffset=0mil|HoleType=Round|Shape=RoundedRectangle|*
-%AMROUNDEDRECTD22*
+G04:AMPARAMS|DCode=23|XSize=18.9mil|YSize=21.65mil|CornerRadius=3.12mil|HoleSize=0mil|Usage=FLASHONLY|Rotation=0.000|XOffset=0mil|YOffset=0mil|HoleType=Round|Shape=RoundedRectangle|*
+%AMROUNDEDRECTD23*
 21,1,0.01890,0.01542,0,0,0.0*
 21,1,0.01266,0.02165,0,0,0.0*
 1,1,0.00624,0.00633,-0.00771*
@@ -32,7 +32,7 @@ G04:AMPARAMS|DCode=22|XSize=18.9mil|YSize=21.65mil|CornerRadius=3.12mil|HoleSize
 1,1,0.00624,-0.00633,0.00771*
 1,1,0.00624,0.00633,0.00771*
 %
-%ADD22ROUNDEDRECTD22*%
+%ADD23ROUNDEDRECTD23*%
 %ADD27R,0.03937X0.02165*%
 G04:AMPARAMS|DCode=35|XSize=69.06mil|YSize=18.73mil|CornerRadius=9.37mil|HoleSize=0mil|Usage=FLASHONLY|Rotation=0.000|XOffset=0mil|YOffset=0mil|HoleType=Round|Shape=RoundedRectangle|*
 %AMROUNDEDRECTD35*
@@ -346,7 +346,7 @@ X421102Y51968D02*
 D03*
 X424567D02*
 D03*
-D22*
+D23*
 X336378Y52756D02*
 D03*
 X336772Y69488D02*
