@@ -6,7 +6,7 @@
 # - Win 11: 5.1.22621.3958
 # - Win 10: 5.1.19041.1682
 
-$pathPartDB = '..\altium_lib\UZgen\jlcpcb.csv'
+$pathPartDB = 'D:\Zohm_Control_GmbH\Work_Altium\ZC_JLC_BOM-Tool\jlc-import.csv'
 $BOMbase    = 'Project Outputs for UZ_A_MAX11331\Rev03\BOM\BOM_JLC-UZ_A_MAX11331(Differential_Input)'
 
 
